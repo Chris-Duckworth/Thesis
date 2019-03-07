@@ -1,0 +1,251 @@
+\colorlet{chaptergrey}{gray}
+\chapter[Signatures of halo assembly in kinematically misaligned galaxies]{Signatures of halo assembly in kinematically misaligned galaxies}
+\label{ch:kin_mis}
+\vspace{-5.25in}
+\includegraphics[height=1.39in]{thesis/latex/kin_mis_files/kin_mis_chapter_heading_grey.pdf}
+\vspace{3in}
+
+\epigraph{This chapter is based on Duckworth, Tojeiro, Kraljic, Sgr\'o, Wild, Weijmans, Lacerna and Drory, in MNRAS, 448, Issue 1, 2019. Here, we investigate the relationship between kinematically misaligned galaxies with their large-scale environment, in the context of halo assembly.}
+
+\section{Introduction} 
+In this chapter, the kinematic misalignment, $\Delta$PA, of central galaxies will be correlated with various environment dependent parameters for the surrounding halo. Following the discussion of \citet{hahn2009}, the current accretion rate is correlated with the large-scale tidal environment. Low-mass haloes in the vicinity of large haloes or massive structures will have their accretion `stalled' as tidal forces overcome their ability to accrete \citep[see also;][]{wang2007,dalal2008,lacerna2011}. Accordingly, this would lead to a relatively earlier formation time and a lack of on-going accretion seen today. Conversely low-mass haloes in environments of low magnitude tidal forces will continue accreting, and could have a late halo assembly time and continued gas accretion onto the central galaxy today. 
+% We explore whether position with respect to filamentary structures identified in the cosmic web, halo age and estimated group occupancy correlate with more recent accretion observed on the central galaxy of the group. A younger halo corresponds, by definition, to more recent dark matter accretion and a richer recent merger history. We explore the idea that low-mass haloes have their cold flow accretion halted due to large-scale tidal environment as indicated by the halo age or vicinity to cosmic web features. 
+
+\subsection{Estimators of halo assembly and environment}
+In this chapter we explore these ideas with the following tests:
+\begin{enumerate}
+\item Cosmic web classification (\red{Section X})
+\begin{itemize}
+\item Distances of haloes to filamentary structures are considered for galaxies split on $\Delta$PA. We test if low-mass haloes near filaments have their accretion `stalled' due to material preferentially flowing along the filament to more dense regions. 
+\end{itemize}
+\item Stellar to halo mass ratio  (\red{Section Y})
+\begin{itemize}
+\item The stellar to halo mass ratio is used as a proxy for halo age and its correlation with $\Delta$PA is considered. We test if large-scale tidal forces can `stall' accretion onto low-mass haloes, seen as a low accretion rate today ($\Delta$PA < 30$^{\circ}$) on the central galaxy, indicating an earlier forming halo.
+\end{itemize}
+\item HOD modelling (\red{Section Z})
+\begin{itemize}
+\item A halo occupation distribution is constructed for groups with aligned and misaligned central galaxies. Earlier forming haloes provide more time for centrals to form and satellites to merge. This would correspond to a decrease in the magnitude of the HOD, which we aim to isolate. 
+\end{itemize}
+\end{enumerate}
+In each section we present both our method and results. The impact of environment on kinematically misaligned galaxies has been previously studied in MaNGA. Using a sample of 66 misaligned galaxies, \citet{jin2016} found that the fraction of misalignment varies with galaxy properties such as stellar mass and sSFR. Regardless of sSFR, they find that kinematically misaligned galaxies are typically more isolated. Could these correspond to the later forming haloes?
+
+\section{Data}
+In this chapter, we base our analysis on 4633 unique galaxy observations corresponding to the 6th MaNGA product launch (MPL). This reflects the completion of the survey as of mid-2018 (data released publicly December 2018). \red{Here, we describe the additional data used and our sample selection.}
+
+\subsection{Stellar mass and halo mass definitions} 
+We use stellar masses estimated in the New-York University Value Added Catalogue from the K-correct routine \citep[NYU-VAC;][]{blanton2005}. To analyse the incident effects onto central galaxies as a function of environment, we require both group identification and estimations of the total halo mass. \citet{yang2007} (Y07 hence-forth) present an adaptive group finding algorithm based on the NYU-VAC to assign galaxies to haloes and then estimate and revise group properties through iteration. We will summarise the basic steps here. Potential group centres are first found through a friend-of-friends algorithm with small linking lengths in redshift space. All galaxies not currently linked are also considered as potential centres. For each tentative group, the combined luminosity of all group members with 
+\begin{equation}
+^{0.1}M_r - 5log(h) \leq -19.5
+\end{equation}
+are found, where $^{0.1}M_r$ is the absolute magnitude estimated from the NYU-VAC K-corrected to $z=0.1$. All galaxies within SDSS data-release 7 (DR7, all spectroscopic galaxies) below $z=0.09$ meet this criteria and hence the combined luminosity can be estimated directly. A corrective factor is applied for groups above this redshift. This total luminosity is then used to assign halo mass and various other group properties, which in turn refines the group identification following an iterative process until conversion. 
+
+We remove all groups with $f_{edge} < 0.6$ as recommended by Y07 corresponding to groups on the survey borders. \citet{yang2009} provide a conservative estimate on the minimum halo mass for groups that would be expected to be complete as a function of redshift. This work primarily focusses on low-mass haloes, ($M_h \lesssim 10^{12.5} M_{\odot}$), however many of these groups will be incomplete at the redshift range selected. Y07 note however that any potential scatter arising from the incompleteness correction should be minimal in comparison with the scatter between group luminosity and assigned halo mass. 
+
+The use of a group catalogue brings important considerations. In low-mass groups, the multiplicity of each group is low, and the luminosity (or stellar mass) of the central galaxy, will largely determine the mass of the group, potentially leading to an under-estimation of the scatter in the stellar-mass to halo-mass relation (see e.g. \citealt{campbell2015, reddick2013}). On the other hand, the fraction of groups with at least one satellite galaxy that is more massive than the central, increases steeply with halo mass (see e.g. \citealt{reddick2013}), leading to artificially larger scatter and an increased likelihood of central misclassification with increasing halo mass. \citet{campbell2015} demonstrate that group finder inferred measurements tend to equalise the properties of distinct galaxy sub-populations, however in general it is possible to recover meaningful physical correlations for average properties as a function of stellar and halo mass. 
+
+We select only galaxies classified as centrals corresponding to the most massive galaxy within each group identified by Y07. The relationship between the central stellar mass and halo mass for galaxies within Y07 is shown in Figure \ref{fig:stel_halo_dist}. The increase of scatter in this relationship with increasing halo mass is likely explained by the limitations of group catalogues mentioned above. 
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/kin_mis_files/stel_halo_ratio_dist.pdf}
+    \caption{Hexagonal density plot of the relationship between the stellar mass  and the halo mass for central galaxies within Y07. The number counts are scaled logarithmically. The black lines show the median (solid) and the 20th and 80th quantiles (dashed) of the stellar mass in bins of halo mass.}
+    \label{fig:stel_halo_dist}
+\end{figure}
+
+\subsection{Sample selection} \label{sec:samp_sec}
+While the complete MaNGA sample may be unbiased to morphology, we must proceed with care when selecting a sub-sample usable for kinematic disturbance. To remove spurious PA fits we eyeball the entire MPL-6 sample and remove all galaxies which have a largely incomplete velocity field, poor or biased PA fit or are virtually face-on so that little or no rotational component is along the line of sight. This removes approximately half of MPL-6 observations. The majority of galaxies removed have largely incomplete gas velocity fields and for that reason our analysis naturally excludes gas-poor and slowly rotating elliptical galaxies. 
+
+Recent studies have found that the fraction of slow rotators increases steeply with stellar mass and has a weak dependence on environment once this is controlled for \citep[e.g.][]{greene2018,lagos2018}. We note that our natural exclusion of gas-poor high-mass galaxies is reflected in the stellar mass distribution of the $\Delta$PA defined sample in Figure \ref{fig:samp_cons}. \red{Reference NSA target catalogue?}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/sample_consistency.pdf}
+    \caption{Relative frequency distributions of stellar mass and redshift for the NSA target catalogue (brown dashed line), MaNGA MPL-6 (green dot-dashed line) and our $\Delta$PA sub-sample (blue solid line). The figure is cut at $z=0.15$ representing the extent of MaNGA targets. Each histogram is given with Poisson errors on each bin.}
+    \label{fig:samp_cons}
+\end{figure}
+
+GalaxyZoo1\footnote{At the point of submission for this work, GalaxyZoo1 provided the largest sample of galaxies with classified morphologies for the MaNGA survey. Since then a complete catalogue for all MaNGA targets has been constructed which will be used and described in \red{Chapter...}} provides visually identified morphologies for a large sample of SDSS galaxies \citep{lintott2008}. Morphology is identified by having over 80\% of debiased classification votes in the same category (i.e. elliptical or spiral). The remainder of galaxies are marked as uncertain morphology. We compare the fraction of ellipticals in our $\Delta$PA sub-sample with MPL-6, as shown in Table \ref{tab:GZ}. GalaxyZoo1 only provides classifications for 3/4 of MPL-6 as reflected by the total classification numbers. We find the fraction of ETGs falls from 0.242 to 0.111, reaffirming our bias against slow-rotating high-mass ellipticals that our eye-balling tends to remove. 
+
+If galaxies are truly morphologically transformed, then this should be reflected in their angular momentum. \citet{cortese2016} find that galaxies lie on a tight plane defined by stellar angular momentum ($j_{stars}$), S\'ersic index and stellar mass when excluding slow rotators in the SAMI galaxy Survey. This could indicate that fast rotating early-type and late-type galaxies are not two distinct populations but instead represent a continuum connecting pure-discs to bulge dominated systems \citep{cappellari2011}. This can be linked to simulation: \citet{lagos2017} use EAGLE \citep{EAGLE2015} to investigate the effects of galaxy mergers on the evolution of stellar specific angular momentum. They find that the gas content of a merger is the most important factor for dictating $j_{stars}$ for the remnant, ahead of both the mass ratio and spin/orbital orientation of the merger progenitors. An increasing rate of wet (gas-rich) mergers corresponds to decreasing stellar mass and increasing $j_{stars}$. Conversely dry (gas-poor) mergers are the most effective way of spinning down galaxies, with gas-poor counter-rotating progenitors creating the biggest decrease in $j_{stars}$. Following this narrative, it is fair to exclude slow rotators which could follow a different evolutionary track to a continuum of fast rotating galaxies in angular momentum phase space. 
+
+\red{We note that the initial GalaxyZoo1 classifications mirror our findings in Section X. Despite the $\Delta$PA defined galaxies in this analysis being predominately classified as LTGs, we find the majority of kinematically misaligned galaxies are ETGs. The ubiquity of misalignment in ETGs and lack there-of in LTGs is a distinct question which is covered in more depth in Chapter X.} 
+
+%The ubiquity of misalignment in ETGs and lack there-of in LTGs is however a distinct question which could be explained by the relative relaxation time-scales of galaxies of different intrinsic angular momenta or the fractions of in-situ/ex-situ origin of gas. This could, however, be a natural result of disc formation and sustainment arising from cold flows of the cosmic web \citep{pichon2011}. If the disc is preferentially aligned with its larger surrounding structure then further directional accretion would be unlikely to create a kinematic misalignment. The low fraction of kinematically misaligned blue galaxies was first noted by \citet{chen2016} who explored a possible mechanism for their formation and characteristics. Selecting only early-type galaxies and comparing the misaligned sub-sample with a stellar mass weighted control does not fundamentally change any of the results presented here. While understanding how a morphology bias could impact any results presented, we leave its origin the focus of future work. 
+
+\begin{table}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+& Total & GZ1 & ETG & LTG \\ \hline
+MPL-6 & 4614 & 3598 & 869 (0.242) & 1225 (0.340) \\
+$\Delta$PA defined & 2272 & 1835 & 204 (0.111) & 1005 (0.548) \\
+$\Delta$PA > 30$^{\circ}$ & 192 & 151 & 85 (0.556) & 9 (0.060)\\
+Final sample & 925 & 812 & 136 (0.167) & 456 (0.561) \\ \hline
+\end{tabular}
+\caption{(Rows: top to bottom) All usable MPL-6 galaxies, all $\Delta$PA defined galaxies within MPL-6, those that are kinematically misaligned with $\Delta$PA > 30$^{\circ}$ and the final sample of central, $\Delta$PA defined galaxies used in this Chapter. For each row, the total number of galaxies is given, along with those defined in GalaxyZoo1 (denoted GZ1 in table) and the total number of which that are classified into early-type (ETG) and late-type (LTG). The fractions of early-types and late-types are defined with respect to the total number of GalaxyZoo1 defined galaxies.}
+\label{tab:GZ}
+\end{table}
+
+We are looking for accretion due to large-scale influence, so we remove all obvious on-going mergers through visual inspection of both the field photometry and IFU observations. We also identify target galaxies interacting with close pairs or neighbours. While this visual inspection should identify the majority of on-going major mergers, we note that our identifications are clearly subjective. We remove $\sim$50 galaxies, identified to be merging or interacting with a nearby neighbour. After matching to the Y07 group catalogue for halo mass we are left with 925 central galaxies which we use in this chapter. 
+
+\section{Cosmic web classification}
+We explore the ability of a low-mass halo to accrete with respect to where it falls within the cosmic web. 
+% \citet{ZOMGI} find that low mass halos within large filaments typically correspond to this `stalled' scenario. Dark matter and baryonic material flows along the filament towards high density nodes (intersection of filaments), which starves the low mass halo residing between nodes (however accretion may be allowed to continue perpendicular to the filament - should still be a lower rate today). Conversely low mass halos residing at the convergence point of multiple small filaments correspond to environments of low tidal force strength as isotropic accretion is allowed to continue. This test correlates distances to various cosmic web features with $\Delta$PA.
+To characterise topological features, such as the filaments which could lead to the suppression of accretion, the Discrete Persistent Structure Extractor code \citep[DisPerSE;][]{sousbie2011a,sousbie2011b} is applied to a modified SDSS DR10 spectroscopic catalogue \citep{tempel2014}. 
+% \citet{kraljic2018} applied DisPerSE to GAMA and analysed various galaxy properties such as u-r colour, specific star formation rate (sSFR) and stellar mass relative to distances to different cosmic web features. They find significant mass and colour gradients with more massive and passive galaxies typically residing closer to both filaments and the points of their intersection (nodes). For fixed stellar mass, the star forming population appears to redden with decreasing distance to filaments \blue{plot?}. This trend can be seen well outside the virial radii of the galaxies and underlying structure and hence can be considered as `pre-processing' which can be explained by large scale filamentary tides rather than any density effect. This can be interpreted as anisotropic assembly bias, that at fixed mass the accretion rate varies with the orientation and distance to filaments. 
+
+\subsection{DisPerSE}
+
+\begin{figure*}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/SDSS_CW_DisPerSE.pdf}
+    \caption{Illustration of the filamentary network (black lines) for a slice of the SDSS field ($0.02 \leq z \leq 0.15$; $ 27 \leq$ dec $\leq 33$) extracted using the DisPerSE code. Only filamentary structures which are seen to persist above the 5$\sigma$ threshold are shown, along with the density contrast of the galaxy population. The density contrast is estimated using the small-scale DTFE estimator (see text).}
+    \label{fig:disperse_sdss}
+\end{figure*}
+
+\red{This section needs putting into my own words. This was written by K. Kraljic.}
+
+DisPerSE is a geometric three-dimensional ridge extractor that applies directly to point-like distributions, making it particularly well adapted for astrophysical applications, as demonstrated by its previous application to various large galaxy surveys, such as SDSS \citep{sousbie2011b}, GAMA \citep{kraljic2018} or VIPERS \citep{malavasi2017}. 
+
+It is based on discrete Morse and persistence theories, allowing for a scale and parameter-free coherent identification of the 3D structures of the cosmic web as dictated by the large-scale topology. 
+
+In a nutshell, discrete homology is used to build the so-called Morse-Smale complex on the point-like tracers. This geometrical segmentation of space defines distinct regions called ascending manifolds that are identified as individual morphological components of the cosmic web; i.e. ascending manifolds of dimension 3, 2, 1 and 0 as voids, walls, filaments and nodes of the cosmic web, respectively. 
+
+In addition to its ability to work with sparsely sampled data sets and assuming nothing about the geometry or homogeneity of the survey, retained structures can be selected on the basis of their significance compared to shot noise. DisPerSE hence allows to trace precisely the locus of filaments, walls and voids using the so called persistence ratio, a measure of the significance of the topological connection between individual pairs of critical points, mimicking thus an adaptive smoothing depending on the local level of noise. In practice, this threshold is expressed in term of number of $\sigma$.
+
+In this work, DisPerSE is run with a 5$\sigma$ persistence threshold to extract the persistent cosmic web from the density field as computed from the discrete distribution of the galaxies in the SDSS main sample using the Delaunay Tessellation Field Estimator technique (DTFE; \citet{schaap2000}; \citet{cautun2011}). An illustration of the filamentary network overlaid with the density contrast of the underlying galaxy distribution for the SDSS field is shown in Figure \ref{fig:disperse_sdss}. 
+
+Being reliant on the three-dimensional distribution of galaxies, DisPerSE is therefore affected by redshift space distortions. On large-scales this corresponds to the Kaiser effect \citep{kaiser1987}, which acts to increase the contrast of the skeleton due the coherent motion of galaxies with the growth of structure \citep[e.g.][]{shi2016}. On small-scales, however, the Fingers of God effect \citep[FOG;][]{jackson1972,tulley1978} derives from random motions of galaxies within virialized haloes. The latter can elongate structure in redshift space leading to erroneous identification of filaments. We correct for the FOG effect using the technique outlined in \citet{kraljic2018}.
+
+\subsection{Cosmic web distances}
+Having constructed a skeleton of the cosmic web, a galaxy's environment can be described by finding its vicinity to various features of the skeleton. The cosmic web comprises of low density `void' regions which are enclosed by `walls' of structure which become filaments at points of intersection. The gravitational potential of the filaments dictate the flow of the matter, which at the point of intersection, feed high density regions interpreted as `nodes'. Along the filament, saddle points remain as minima between the flows towards nodes.  
+% GAMA has a completeness of > 98\% down to a r-band apparent magnitude of $m_r$ = 19.8 whereas... Care must therefore be taken when making any direct comparisons between GAMA and DR7.
+
+The distance to the nearest filamentary point, $D_{skel}$, is first found for each galaxy. To then consider the influence of the nearest node, the distance from this impact point along the filament to the node is also computed, $D_{node}$. Finally the distance to the nearest wall, $D_{wall}$, can then be found. In order to investigate expected trends of galaxies with vicinity to any cosmic web feature we must remove effects resulting due to the proximity of others. For $D_{skel}$ we remove all galaxies that lie within $D_{node} < 0.5$ Mpc. 
+% and for $D_{wall}$, all galaxies within $D_{node} < 0.5$ Mpc and $D_{skel} < 2.5$ Mpc are discounted. 
+This represents a compromise between eliminating the effect of other cosmic web features and having enough galaxies left to construct a statistically significant sample. Tightening the condition with respect to nodes so that we require $D_{node} > 1$ Mpc does not change any of the results presented in this work. 
+We do not include analysis with respect to the walls since we limited to low numbers after removing galaxies that could be influenced by nodes and/or filaments.
+
+Construction of the cosmic web from any observation is influenced by the completeness and the sampling of the galaxy sample. The modified SDSS DR10 spectroscopic sample is complete to $m_r$ = 17.77. A sample containing only brighter galaxies will naturally only identify stronger/larger filamentary features and hence smaller substructures will be missed. In addition, the lower the sampling of galaxies, the lesser the accuracy of the actual position of cosmic web features. To correct for this, the distances are normalised by the mean inter-galaxy separation, $\left\langle D_z \right\rangle$ at a given redshift, as such $\left\langle D_z \right\rangle = n(z)^{-1/3}$ where $n(z)$ is the number density. 
+
+\subsection{Environmental density and stellar mass}
+Before we consider the role of the cosmic web, we consider the role of environmental density and stellar mass in our results. A dependence on small scale density is an indirect effect of halo mass and would not probe the large-scale anisotropy of the cosmic web. It is also important to isolate the role of stellar mass and morphology following their distinct gradients with respect to cosmic web features found in GAMA \citep{kraljic2018}.
+
+Figure \ref{fig:density_hab} shows the distributions of densities and stellar mass for the aligned and misaligned samples. Density used in this work is computed using a Delaunay tessellation of the discrete galaxy positions through the DTFE estimator, smoothed with a Gaussian kernel at local scales (3 Mpc) and at large scales (9 Mpc). 
+
+We evaluate the likelihood of the aligned and misaligned sample being drawn from the same continuous distribution through implementation of a two-sample Kolmogorov--Smirnov (KS) test. In each case a D-value of the KS statistic with a corresponding p-value is provided. The D-value (referred to as the KS statistic hence-forth) provides the maximum fractional difference between the cumulative distribution functions with a p-value corresponding to the null hypothesis that the two samples are drawn from the same continuous distribution. A high KS value combined with a low p-value (for example; KS $\geq$ 0.1 for P $\leq$ 10\% confidence level) therefore is consistent with the two samples being significantly different.
+
+The first row of Figure \ref{fig:density} considers the difference between all $\Delta$PA defined galaxies. We find that the misaligned galaxies ($\Delta$PA > 30$^{\circ}$) reside in more dense environments at small and large scales with a probability that the distributions are instead consistent of 0.3\% and 0.5\% respectively. The two samples are consistent in distribution of stellar mass, despite the difference in classified morphology, as shown in Table \ref{tab:GZ}. In the second row of Figure \ref{fig:density} we consider the same properties but only for ETGs. We select on optical morphology using the classifications of GalaxyZoo1 as introduced in \S\ref{sec:samp_sec}. We find that the difference seen in density smoothed on small scales may be explained by morphology as the p-value for the KS test increases, however misaligned galaxies tend to reside in more dense large-scale environments and populate lower stellar masses compared with aligned galaxies of the same morphology.
+
+In order to minimize the effect of $\rho_{3Mpc}$ and $M_{\ast}$ in our cosmic web results, in the next section we weight distance distributions on both stellar mass and small scale density, when comparing the distribution of cosmic distances for the aligned and misaligned samples. This is done through normalising the histogram of the weight quantity to be consistent between distributions using a minimum of three bins. We also include the results of ETGs only to minimize the impact of morphology. We cannot do the same for LTGs due to the lack of misaligned LTGs. 
+
+\begin{figure*}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ALL_ET_DENSITY.pdf}
+    \caption{Probability density distributions of density smoothed with a Gaussian kernel at the scale of 3 Mpc \& 9 Mpc and the stellar mass, log$_{10}(M_{\ast}/M_{\odot})$ (left to right) for all $\Delta$PA defined galaxies (top row) and all GalaxyZoo1 classified elliptical galaxies with a $\Delta$PA (bottom row). Aligned galaxies ($\Delta$PA < 30$^{\circ}$) are shown in red (solid line) and those with high misalignment ($\Delta$PA > 30$^{\circ}$) are in black (dashed line). Each histogram is given with Poisson errors on each bin. A two-sample KS statistic and its corresponding p-value is overlaid for comparison between the distributions in each cell and the vertical lines denote the corresponding distribution's median. Using all galaxies, the misaligned sample resides in higher density at the scales of 3 Mpc and 9 Mpc to the aligned sample respectively, but are equivalent in stellar mass. Selecting only ETGs accounts for the difference in small scale density but the misaligned sample are at lower stellar masses than the aligned.}
+    \label{fig:density_hab}
+\end{figure*}
+
+\subsection{Results of cosmic web distances} \label{sec:cw_res}
+Figure \ref{fig:cw_all} shows the distance probability density distributions of aligned and misaligned galaxies with respect to nodes (left) and filaments (right). The top row shows the two samples weighted on stellar mass, the middle row weighted on small scale density (3 Mpc smoothed) and the bottom row shows the raw distributions. The results of a two-sample KS test with corresponding weightings to the cumulative distribution function are overlaid in each cell. 
+% This is to assess if any signal is an indirect result of halo mass, rather than the tidal forces we aim to probe. 
+
+%We do not include interpretation of the distribution of misaligned galaxies with respect to walls since we are limited to very low numbers and they are left unweighted. 
+The distributions of aligned and misaligned galaxies with respect to filaments meet the null hypothesis criterion of high p-values for all weighting schemes (i.e. no statistically significant difference between distributions). This is indicative that $\Delta$PA is independent of the influence of filaments identified in our analysis. For the unweighted samples, we find that misaligned galaxies typically reside in closer vicinity to nodes than their aligned counterparts as indicated by a p-value of 0.089. This difference is however partially negated by weighting on stellar mass or density smoothed on the 3 Mpc scale, as reflected in slightly reduced KS values and p-values increased above the 0.1 significance level.
+
+The origin of misaligned galaxies residing preferentially closer to nodes could be explained by their morphology difference with respect to the aligned sample. In previous work, \citet{kraljic2018} found distinct gradients of stellar mass and morphology with vicinity to nodes and filaments. Figure \ref{fig:cw_et} shows the distributions of cosmic web feature distances but now only selecting ETGs. We find that in all weighting schemes, the distance distributions of aligned and misaligned galaxies with respect to both nodes and filaments meet the null hypothesis criterion as reflected in large p-values (> 0.4). These distributions appear to be drawn from the same continuous distribution, indicating that direct and indirect effects of morphology are likely responsible for the difference in distance to nodes. 
+% In all cases we find no statistical difference between distances to features for the aligned and misaligned galaxies. As previously noted, GalaxyZoo1 only provides classifications for 3/4 of MPL-6. 
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ALL_CW.pdf}
+    \caption{Probability density distributions of normalised distances to cosmic web features for all $\Delta$PA defined galaxies. Distances to nodes (left) and filaments (right) are normalised by the sampling at a given redshift. The distributions of galaxies in the top row is weighted on stellar mass between the aligned (red solid line) and misaligned samples (black dashed line). The distributions are weighted by density smoothed by a Gaussian kernel at the scale of 3 Mpc for the middle row and are left unweighted for the bottom row. A two-sample KS statistic and its corresponding p-value is overlaid for comparison between the distributions in each cell. The error bars represent the poisson noise in each bin. The weighted median values for each distribution are shown by the vertical lines.}
+    \label{fig:cw_all}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ET_CW.pdf}
+    \caption{Same as Figure \ref{fig:cw_all} but using only visually selected ETGs as found in GalaxyZoo1.}
+    \label{fig:cw_et}
+\end{figure}
+
+\subsection{The role of halo mass}
+Our primary aim in this section is to isolate if vicinity to filaments can impact the rate of present-time accretion on a central galaxy in a low-mass halo. Including high-mass haloes in our sample may counteract any observable signal as they are possible candidates responsible for quenching accretion. High-mass, typically old haloes, are the opposite of what we are trying to target: young, still forming low-mass haloes (with respect to old low-mass haloes). 
+
+We now consider $D_{skel}$ for low-mass haloes only. \citet{tojeiro2017} found signal of halo assembly bias in low-mass haloes using the stellar to halo mass ratio in GAMA. Low-mass haloes residing in regions of stronger tidal forces were found to form earlier irrespective of density, with this trend apparently reversed at high mass. This signal was found to be strongest for haloes of mass $M_h \sim 10^{12.3} M_{\odot}$, however a slight trend was found even at $M_h \sim 10^{12.74} M_{\odot}$. To ensure we have enough objects for a statistically significant sample we therefore consider all central galaxies residing in haloes of mass: $M_h \sim 10^{12.5} M_{\odot}$. Figure \ref{fig:mh_cw} shows the distance probability density distributions for the whole $\Delta$PA defined sample and GalaxyZoo1 defined ETGs only. For all weighting schemes, we find p-values consistently above the 0.1 significance level and hence conclude the null hypothesis that the aligned and misaligned galaxies are consistent in distance distributions with respect to filaments. This holds true regardless of morphology selection.
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ALL_CW_Mh12_5.pdf}
+    \caption{Probability density distributions of normalised distances to filaments for galaxies with log$_{10}$(M$_h$/M$_{\odot}) \le 12.5$. As in Figure \ref{fig:cw_all} the distributions are weighted on stellar mass (top), density smoothed at scales of 3 Mpc (middle) and left unweighted (bottom). The distributions of all $\Delta$PA defined galaxies (left) and only galaxyZoo selected ETGs (right) are shown for comparison.}
+    \label{fig:mh_cw}
+\end{figure}
+
+\section{Stellar to halo mass ratio}\label{sec:MsMh}
+In this section we introduce an observational proxy for halo formation time: the central stellar to total halo mass ratio. Its use was motivated in \citet{wang2011} who explored the correlation between various halo properties which were identified within a set of seven N-body simulations using the P\textsuperscript{3}M code described in \citet{jing2007}. One of the most important properties is its formation time, $z_f$ which was shown to correlate with galaxy properties such as SFR, galaxy age and colour. The formation time in this instance is defined as the redshift at which the main progenitor has formed half of the mass of the final halo. %An observational counterpart must be constructed as $z_f$ cannot be determined from galaxies alone. 
+They establish that formation time shows a tight correlation with the sub-structure fraction, $f_s = 1 - M_{main}/M_h$, where $M_{main}$ and $M_h$ are the main \textit{sub}-halo mass and the halo mass respectively \citep{gao2007}. 
+The ratio of $M_{main}$ and the total halo mass is seen to act as an robust estimate for formation time. Following \citet{lim2015}, we use the following as an observational proxy,
+\begin{equation}
+f_c = \frac{M_{*,c}}{M_h},
+\end{equation}
+where $M_{*,c}$ is the stellar mass of the central galaxy. The $M_h$ in this instance is found using the group stellar mass ranking from Y07. $M_{*,c}$ is a reasonable estimator for the main sub-halo mass $M_{main}$ however they do not hold an exactly monotonic relation. Given this and that $f_s$ is not perfectly correlated with formation time, $f_c$ can only be considered to be a relative proxy of $z_f$ as shown in \citet{lim2015}. A higher value of $M_{*,c}/M_h$ should correspond to a relatively older halo. 
+Semi-analytic and hydrodynamical simulations have since confirmed a correlation between halo assembly time and the stellar to halo mass ratio, and have shown how halo formation time partly explains the scatter in the stellar mass to halo mass relation \citep[e.g.][]{matthee2017,tojeiro2017,zehavi2018}. Observationally, \cite{tojeiro2017} show that the stellar to halo mass ratio of central galaxies varied with position within the cosmic web, at fixed halo mass. In this section, we investigate whether recent accretion history, associated with younger halos, might be visible in the kinematics of gas and stars.
+
+\subsection{Results of the halo age proxy}
+Figure \ref{fig:2d_ratio} shows the stellar to halo mass ratio as function of $\Delta$PA. Since we do not possess errors for stellar mass or halo mass and can only roughly estimate $\Delta$PA errors, we bin our data and calculate the standard error on the mean. We split our sample at the median halo mass of $M_{\ast} = 10^{12.3} M_{\odot}$ and divide galaxies into bins with boundaries; $\Delta$PA$ = [0,5,10,20,90,180] (^{\circ})$. In each of the halo mass bins, we weigh the redshift and halo mass distributions to be consistent in each bin of $\Delta$PA. Figure \ref{fig:2d_ratio} shows no particular dependence on $\Delta$PA for this proxy of halo age. However, given the strong dependence of $M_{\ast}/M_{h}$ on $M_{h}$, we investigate this further by simultaneously considering the relationship between $M_{h}$, $M_{\ast}/M_{h}$ and $\Delta$PA. 
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/stel_halo_ratio_bin0_10_20_30_90.pdf}
+    \caption{The central stellar to total halo mass ratio for the $\Delta$PA sub-sample in bins of halo mass. Galaxies residing in haloes of M$_{\ast} < 10^{12.3}$M$_{\odot}$ (blue dashed line), M$_{\ast} > 10^{12.3}$M$_{\odot}$ (red dot-dashed line) and the total sample (black solid line) are divided into bins of $\Delta$PA$ = [0,10,20,30,90,180] (^{\circ})$. Error-bars are given by the standard error on the mean. Within each bin of halo mass, distributions are weighted on redshift and halo mass between all $\Delta$PA bins.}
+    \label{fig:2d_ratio}
+\end{figure}
+
+%Figure \ref{fig:plane_fit} shows the three parameter space. 
+We divide our parameter space into quarters by splitting galaxies at $\Delta$PA = 30$^{\circ}$ and $M_{h} = 10^{12.3}M_{\odot}$. In each region we fit a flat plane to our data points as described by,
+\begin{equation}
+M_{\ast}/M_{h} = c_{0} log_{10}(M_{h}/M_{\odot}) + c_{1}\Delta PA + c_{2}.
+\end{equation}
+A strong correlation between $M_{\ast}/M_{h}$ and $\Delta$PA would correspond to a relatively large value of $c_{1}$ with regards to $c_{0}$. To understand the significance of any result, we also fit a flat plane with $c_{1} = 0$ (i.e. no dependence on $\Delta$PA) and evaluate $\chi_{red}^2$ for both. These values are found in Table \ref{tab:chisq}. We are inherently limited by having no errors on the estimates of stellar mass and halo mass for our sample. We therefore construct constant errors across the sample estimated from the sample variance. The sample variance itself is found from considering each data point with regards to its 10 nearest neighbours in the parameter space. 
+
+We find that fixing the gradient along $\Delta$PA has little or no effect on the fit of the linear plane, regardless of how we sub-divide our parameter space. In some cases the comparison planes are effectively the same allowing for a smaller $\chi_{red}^2$ for the two free parameter fit. As discussed in \S\ref{mass}, halo masses assigned to galaxy groups using the Y07 group catalogue are corrected due to incompleteness above $z=0.09$. We consider the plane fitting again but with redshift cuts at both $z=0.09$ and a conservative $z=0.05$. In both instances, we also find there are no statistically significant gradients along $\Delta$PA. We therefore conclude that $\Delta$PA holds little correlation with the age of the halo in which it resides, as inferred from current measurements of $M_{\ast}/M_{h}$. 
+
+% \begin{figure}
+% 	\includegraphics[width=\linewidth]{stel_halo_param_chisq_fit}
+%     \caption{Parameter space for the central stellar to halo mass ratio (M$_{\ast}$/M$_{h}$), halo mass (M$_{h}$) and $\Delta$PA. $\Delta$PA and M$_{h}$ are scaled logarithmically for presentation purposes. All scatter points correspond to galaxies within our analysis and are fit by 2D planes through least squares minimization. Each colour corresponds to the parameter space range in which a plane was fitted. The parameter space is divided at $\Delta$PA = 30$^{\circ}$ corresponding to red and black filled colours below and above this. It is secondly split at $M_{h} = 10^{12.3}M_{\odot}$ with blue and red edge colours corresponding to low and high mass respectively.}
+%     \label{fig:plane_fit}
+% \end{figure}
+
+\begin{table}
+\begin{tabular}{|l|c|c|c|}
+\hline
+$M_{h}/M_{\odot}$& & $\Delta$PA = [0, 30]($^{\circ}$) & $\Delta$PA = [30, 180]($^{\circ}$) \\ \hline 
+[$10^{11.7}, 10^{12.3}$] & $c_{1} = 0$: & 1.188 & 1.070 \\
+					   & Free : & 1.190 & 1.068 \\ \hline
+[$10^{12.3}, 10^{14}$]   & $c_{1} = 0$: & 1.218 & 0.988 \\ 
+					   & Free: & 1.212 & 1.001 \\ \hline
+% fix units on this table
+\end{tabular}
+\caption{$\chi_{red}^2$ for plane fits with $c_1 = 0$ and left free in the parameter space for the central stellar to halo mass ratio (M$_{\ast}$/M$_{h}$), halo mass (M$_{h}$) and $\Delta$PA. The parameter space is divided at $\Delta$PA = 30$^{\circ}$ and $M_{h} = 10^{12.3}M_{\odot}$.}
+\label{tab:chisq}
+\end{table}
+
+\section{Halo occupation distribution}
+In this section we introduce the HOD function and how it can be used to infer halo age. In describing the relationship between galaxies and dark matter haloes, HODs are a useful prescription to determine models of galaxy formation and evolution \citep[e.g.][]{berlind2003}. They provide a probability distribution function $P(N|M_h)$ for a set of virialised haloes where $N$ is the number of hosted galaxies for a given halo mass $M_h$. A fundamental assumption underlying HOD modelling is that the galaxy occupation is purely dependent on the halo mass. Typically the observed galaxy clustering is used to construct the empirical relationship that allows mock dark matter haloes to be populated with galaxies. Assembly bias would directly affect the observed clustering of galaxies and hence challenge any interpretation using the HOD framework. 
+
+Continuing our discussion, low-mass haloes near large haloes are expected to cease formation earlier. This leads to a boost of galaxy clustering at this halo mass range relative to the overall sample as they live preferentially in high density regions. \citet{zehavi2018} previously investigated the dependence of occupation functions on various properties such as large-scale environmental density and halo age using semi-analytical galaxy models applied to the Millennium simulation \citep{springel2005} \citep[See also;][who confirmed these results using the hydro simulations of EAGLE and Illustris]{artale2018}. They find that higher density environments generally act to populate lower mass haloes with central galaxies. A stronger dependence can be found on halo age, however, as earlier forming low-mass haloes are more likely to host central galaxies. In addition, earlier forming haloes are likely to host fewer satellites relative to late forming haloes at fixed halo mass. A simple explanation is that the early forming haloes provide more time for their constituent satellite galaxies to merge with the central. More massive central galaxies may therefore reside in low-mass haloes that formed early due to this general in-flow, analogous to a higher stellar to halo mass ratio. 
+
+\subsection{Background subtraction}
+To understand the assembly history of a central galaxy's sub-halo we must consider the role of satellites that contribute to the hierarchical structure growth of its halo merger tree. However, we are limited by the magnitude and typical size of galaxies inhibiting small substructure around a main sub-halo. \citet{liu2011} demonstrate a common method for counter-acting the lack of spectroscopic information for satellite galaxies through counting possible photometric group members. Their numbers are then statistically corrected to remove the contribution of contaminant foreground and background galaxies outside of the group. This enables a lower limit of apparent magnitudes which can be accessed through use of the background subtraction technique. \citet{rodriguez2015} extend this formalism to HOD modelling and provide the technique we implement here. For a complete description of the technique we direct the reader to this reference, however we will summarise the basic concepts here.
+
+Background subtraction requires two catalogues that share the same sky area; we will use our $\Delta$PA defined MaNGA centrals with their identified groups in combination with the photometric SDSS catalogue. For the photometric galaxies in the sky region of a group, their absolute magnitudes are calculated at the redshift of the group, $z_{f}$. The total number of galaxies with an absolute magnitude $M \le M_{min}$ are then counted within a circle around the group centre with its radius determined by the projected characteristic radius on the sky. In order to remove background galaxies, an estimation of the local density with respect to the average catalogue density must be made. All galaxies with $M \le M_{min}$ are recounted in concentric annuli centred on the group to provide the local density. A correction for the total number of galaxies in the group can then be estimated by subtracting the local background density multiplied by the group's projected area. The HOD is then constructed by binning the groups into mass intervals and averaging.
+
+\citet{rodriguez2015} demonstrate the recovery of the background subtraction method using mock catalogues constructed from semi-analytic models of galaxy formation applied on top of the Millennium simulation. They compare the HODs found from the background subtraction technique to HODs of the direct galaxy counts in volume limited samples for different magnitude limits \citep[see Figure 1 in;][]{rodriguez2015}. Beyond a small overprediction for fainter magnitudes ($M_{lim} \approx -16.0$), they find good agreement with direct galaxy counts for all absolute magnitudes.
+
+Results from the background subtraction technique have also been compared to results of other HOD estimation techniques applied to observations. \citet{yang2008} parametrise HODs for satellite galaxies in groups identified in SDSS DR4 using the adaptive group-finding algorithm of Y07 (see \S\ref{mass} for discussion). The background subtraction technique shows great agreement in estimating parameters of the HOD relative to the method of \citet{yang2008} but additionally offers the ability to estimate the HOD for fainter absolute magnitudes than previous work \citep[see Figure 5 in][]{rodriguez2015}.
+
+MPL-6 does not provide a large enough sample size to construct a reliable two-halo term in HOD modelling through calculation of the cross-correlation function. Background subtraction therefore represents the best estimation for this sample size.
+
+\subsection{Results of the HOD}
+We match each central galaxy in our $\Delta$PA sample with its corresponding satellite group members using \citet{yang2007}. We split our groups at $\Delta$PA = 10$^{\circ}$ for the central and calculate the HOD using the background subtraction technique. Our lower split in $\Delta$PA is purely due to limitations of sample numbers. As demonstrated in \S \ref{def_mis}, this should be above the resolution limit of $\Delta$PA, however may include more galaxies with spurious kinematic misalignments or due to an internal origin. 
+
+Figure \ref{fig:hod_mpl6} shows the HOD for different magnitude cuts of the group during comparison to the photometric background. As fainter galaxies are removed, the overall magnitude of the HOD naturally decreases as we have less complete groups. As a sanity check, we compare our HODs estimated from the background subtraction technique to HODs estimated directly from clustering in SDSS DR7 with similar magnitude cuts \citep{zehavi2011}. The authors use measurements of the projected correlation function for SDSS DR7, which is translated into a HOD through use of a smoothed step function \citep[see equation 7;][]{zehavi2011}. This comparison is shown in panels II-IV (green dashed line) and matches our estimation well.
+Regardless of $\Delta$PA classification, at all magnitude thresholds we find that the difference between the HODs are indiscernible. We conclude that $\Delta$PA of the central galaxy does not produce a difference in its constituent group assembly that can be seen through occupation functions. A detailed analysis using cross-correlations will be presented in a future paper, once the sample size of MaNGA is sufficient.
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/hod_vs_zehavi.pdf}
+    \caption{Halo occupation distributions using background subtraction for groups with central galaxies with $\Delta$PA < 10$^{\circ}$ (red) and $\Delta$PA > 10$^{\circ}$ (black). Panels I, II, III \& IV correspond to a $r$-band magnitude cut of $\leq$ -17, -18, -19 and -20 respectively. The points reflect the estimation for individual groups, with these lines representing the mean with corresponding errors on the mean. In panels II-IV, comparison to HODs estimated directly from clustering with similar magnitude cuts are shown by the green dashed lines \citep[][see text]{zehavi2011}.}
+    \label{fig:hod_mpl6}
+\end{figure}
