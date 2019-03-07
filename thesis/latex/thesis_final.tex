@@ -1,0 +1,253 @@
+\documentclass[11pt]{book}
+
+% Set table of contents depth
+
+\setcounter{tocdepth}{2}
+
+% Set the margins
+
+\usepackage[left=3.5cm,top=3.5cm,right=2.5cm,bottom=3.0cm,a4paper,twoside]{geometry}
+
+% Set one-and-a-half spacing
+
+\usepackage{setspace}
+\setstretch{1.5}
+
+% Set font to charter (just remove for default font)
+
+\usepackage[charter]{mathdesign}
+
+% Set chapter style to avantgarde (big grey numbers)
+\usepackage{xcolor}
+\RequirePackage[avantgarde]{quotchap}
+
+% Load various packages
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[breaklinks]{hyperref}
+\usepackage{afterpage}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage{todonotes}
+\usepackage{epigraph}
+
+% Adding packages for epigraphs.
+\setlength\epigraphwidth{1\textwidth}
+\setlength\epigraphrule{0pt} % no line between
+\setlength\beforeepigraphskip{1\baselineskip} % space before and after epigraph
+\setlength\afterepigraphskip{2\baselineskip}
+\renewcommand*{\textflush}{flushright}
+\renewcommand*{\epigraphsize}{\normalsize\itshape}
+
+% Set caption style
+
+\usepackage[small,bf]{caption}
+
+% Include custom definitions (edit definitions.tex)
+
+\include{definitions}
+
+% Set page headers
+\fancyhead{}
+\fancyhead[RO]{\it \nouppercase{\rightmark}}
+\fancyhead[LE]{\it \nouppercase{\leftmark}}
+
+% Set headings format
+
+\titleformat{\paragraph}[runin]{}{}{}{\bfseries\em}[:]
+
+% Set headings spacing
+
+\titlespacing*{\section}{0pt}{0.1in}{0.0in}
+\titlespacing*{\subsection}{0pt}{0.1in}{0.0in}
+\titlespacing*{\subsubsection}{0pt}{0.1in}{0.0in}
+\titlespacing*{\paragraph}{0pt}{0.0in}{0.1in}
+
+% Set various lengths
+
+\setlength{\parsep}{0.0in}
+\setlength{\topskip}{0in}
+\setlength{\topsep}{0.15in}
+
+\setlength{\headsep}{0.20in}
+\setlength{\parskip}{0.1in}
+\setlength{\partopsep}{0.0in}
+
+\setlength{\floatsep}{0.25in}
+\setlength{\textfloatsep}{0.10in}
+\setlength{\abovecaptionskip}{0.10in}
+\setlength{\belowcaptionskip}{0.00in}
+
+% Figure width and displacement
+
+\newlength{\figwidth}
+\setlength{\figwidth}{6.0in}
+
+\newlength{\figmargin}
+\setlength{\figmargin}{-0.10in}
+
+\newlength{\initialjump}
+\setlength{\initialjump}{-1.00in}
+
+\newcommand\T{\rule{0pt}{3.1ex}}
+\newcommand\B{\rule[-1.7ex]{0pt}{0pt}}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\setcounter{totalnumber}{1}
+
+% adding text colour options
+\newcommand{\red}[1]{{\textcolor{red}{#1}}}
+\newcommand{\green}[1]{{\textcolor{green}{#1}}}
+\newcommand{\blue}[1]{{\textcolor{blue}{#1}}}
+
+% Start document
+
+\begin{document}
+% Make title page
+\pagestyle{empty}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\center
+\vspace*{0.3cm}
+\textsc{\LARGE The University of St Andrews}\\[0.1cm] % Name of your university/college
+\textsc{\Large School of Physics and Astronomy}\\[3cm] % Major heading such as course name
+\includegraphics[width=0.7\textwidth]{thesis/latex/st_a_logo_.png}
+
+\HRule \\[0.4cm]
+{ \LARGE Galaxies as potential tracers: \Large \\[0.2cm] \textbf{Looking for halo assembly bias in galaxy observables}}\\[0.4cm] % Title of your document
+\HRule \\[1.6cm]
+\Large
+\textsl{by} \\
+\textbf{Christopher James Duckworth}
+\\
+\vspace*{2cm}
+\textsl{\Large Submitted for the degree of Doctor of Philosophy in Astrophsyics}\\[0.6cm] % Minor heading such as course title
+{\Large {March 2020}}\\[3cm]
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+\frontmatter
+
+\chapter{Declaration}
+
+I, Christopher James Duckworth, hereby certify that this thesis, which is approximately 50,000 words in length, has been written by me, that it is the record of work carried out by me and that it has not been submitted in any previous application for a higher degree.\\
+
+Date  \hspace{1.8in} Signature of candidate \\
+
+I was admitted as a research student in September 2016 and as a candidate for the degree of PhD in September 2016; the higher study for which this is a record was carried out in the University of St Andrews between 2016 and 2020.\\
+
+Date  \hspace{1.8in} Signature of candidate \\
+
+I hereby certify that the candidate has fulfilled the conditions of the Resolution and Regulations appropriate for the degree of PhD in the University of St Andrews and that the candidate is qualified to submit this thesis in application for that degree.\\
+
+Date  \hspace{1.8in} Signature of supervisor \\
+
+\chapter{Copyright Agreement}
+
+In submitting this thesis to the University of St Andrews we understand that we are giving permission for it to be made available for use in accordance with the regulations of the University Library for the time being in force, subject to any copyright vested in the work not being affected thereby. We also understand that the title and the abstract will be published, and that a copy of the work may be made and supplied to any bona fide library or research worker, that my thesis will be electronically accessible for personal or research use unless exempt by award of an embargo as requested below, and that the library has the right to migrate my thesis into new electronic forms as required to ensure continued access to the thesis. We have obtained any third-party copyright permissions that may be required in order to allow such access and migration, or have requested the appropriate embargo below.\\
+
+The following is an agreed request by candidate and supervisor regarding the electronic publication of this thesis: Access to Printed copy and electronic publication of thesis through the University of St Andrews.\\
+
+Date  \hspace{1.8in} Signature of candidate \\
+
+Date  \hspace{1.8in} Signature of supervisor \\
+
+\setstretch{1.3}
+
+\chapter{Abstract}
+
+All your base are belong to us.
+
+\chapter{Acknowledgements}
+
+All your base are belong to us.
+
+\newpage
+
+\setstretch{1.0}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\setstretch{1.5}
+
+\mainmatter
+
+\pagestyle{fancy}
+
+% NOTE: Here come the chapters - you can have one file per chapter. When you are writing a given chapter, you can always comment out the others to speed up the typesetting.
+
+\include{thesis/latex/introduction}
+\include{thesis/latex/kin_mis_files/kinematic_misalignment_manga}
+
+%\include{darkness_light}
+
+%\include{ch_grid}
+
+%\include{ch_fitter}
+
+%\include{ch_red}
+
+%\include{conclusion}
+
+% NOTE: The \appendix command means that chapters will now change from numbers to letters
+
+\appendix
+
+%\include{appendix_filters}
+
+%\include{appendix_browser}
+
+%\include{appendix_fitter}
+
+%\include{appendix_taurus_data}
+
+%\include{appendix_photometry}
+
+%\include{appendix_catalog}
+
+\backmatter
+
+% NOTE: you can also add pages like the following. Using the empty pagestyle means that it won't count as a chapter (like the declaration, copyright, abstract, ...)
+
+\pagestyle{empty}
+
+\chapter{Online resources}
+
+\begin{footnotesize}
+
+\noindent [1] - \href{http://circumstellardisks.org/}{http://circumstellardisks.org/}
+
+\noindent [2] - \href{http://stardust.jpl.nasa.gov/}{http://stardust.jpl.nasa.gov/}
+
+\noindent [3] - \href{http://gemelli.colorado.edu/~bwhitney/}{http://gemelli.colorado.edu/~bwhitney/}
+
+\end{footnotesize}
+
+\setstretch{1.1}
+
+\newpage
+
+\ \\
+
+\newpage
+
+% NOTE: finally, the bibliography. I used BibTex, hence all references were in references.bib.
+
+\addcontentsline{toc}{chapter}{Bibliography} % Add bibliography to table of contents
+\bibliographystyle{apj_tr9} % limits to 8 authors, longer author lists go to et al.
+\bibliography{biblio}   % main bib file
+
+\end{document}
