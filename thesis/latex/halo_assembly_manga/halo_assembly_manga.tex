@@ -46,7 +46,8 @@ The use of a group catalogue brings important considerations. In low-mass groups
 We select only galaxies classified as centrals corresponding to the most massive galaxy within each group identified by Y07. The relationship between the central stellar mass and halo mass for galaxies within Y07 is shown in Figure \ref{fig:stel_halo_dist}. The increase of scatter in this relationship with increasing halo mass is likely explained by the limitations of group catalogues mentioned above. 
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{thesis/latex/misalignment_intro/stel_halo_ratio_dist.pdf}
+    \centering
+	\includegraphics[width=0.8\linewidth]{thesis/latex/misalignment_intro/stel_halo_ratio_dist.pdf}
     \caption[Hexagonal density plot of the relationship between the stellar mass  and the halo mass for central galaxies within Y07]{Hexagonal density plot of the relationship between the stellar mass  and the halo mass for central galaxies within Y07. The number counts are scaled logarithmically. The black lines show the median (solid) and the 20th and 80th quantiles (dashed) of the stellar mass in bins of halo mass.}
     \label{fig:stel_halo_dist}
 \end{figure}
@@ -57,7 +58,8 @@ While the complete MaNGA sample may be unbiased to morphology, we must proceed w
 Recent studies have found that the fraction of slow rotators increases steeply with stellar mass and has a weak dependence on environment once this is controlled for \citep[e.g.][]{greene2018,lagos2018}. We note that our natural exclusion of gas-poor high-mass galaxies is reflected in the stellar mass distribution of the $\Delta$PA defined sample in Figure \ref{fig:samp_cons}. \red{Reference NSA target catalogue?}
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/sample_consistency.pdf}
+    \centering
+	\includegraphics[width=0.6\linewidth]{thesis/latex/halo_assembly_manga/sample_consistency.pdf}
     \caption[Relative frequency distributions of stellar mass and redshift for the NSA target catalogue, MaNGA MPL-6 and $\Delta$PA sub-samples.]{Relative frequency distributions of stellar mass and redshift for the NSA target catalogue (brown dashed line), MaNGA MPL-6 (green dot-dashed line) and our $\Delta$PA sub-sample (blue solid line). The figure is cut at $z=0.15$ representing the extent of MaNGA targets. Each histogram is given with Poisson errors on each bin.}
     \label{fig:samp_cons}
 \end{figure}
@@ -71,6 +73,7 @@ If galaxies are truly morphologically transformed, then this should be reflected
 %The ubiquity of misalignment in ETGs and lack there-of in LTGs is however a distinct question which could be explained by the relative relaxation time-scales of galaxies of different intrinsic angular momenta or the fractions of in-situ/ex-situ origin of gas. This could, however, be a natural result of disc formation and sustainment arising from cold flows of the cosmic web \citep{pichon2011}. If the disc is preferentially aligned with its larger surrounding structure then further directional accretion would be unlikely to create a kinematic misalignment. The low fraction of kinematically misaligned blue galaxies was first noted by \citet{chen2016} who explored a possible mechanism for their formation and characteristics. Selecting only early-type galaxies and comparing the misaligned sub-sample with a stellar mass weighted control does not fundamentally change any of the results presented here. While understanding how a morphology bias could impact any results presented, we leave its origin the focus of future work. 
 
 \begin{table}
+\centering
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 & Total & GZ1 & ETG & LTG \\ \hline
@@ -94,6 +97,7 @@ To characterise topological features, such as the filaments which could lead to 
 \subsection{DisPerSE}
 
 \begin{figure*}
+    \centering
 	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/SDSS_CW_DisPerSE.pdf}
     \caption[Illustration of the filamentary network for a slice of the SDSS field.]{Illustration of the filamentary network (black lines) for a slice of the SDSS field ($0.02 \leq z \leq 0.15$; $ 27 \leq$ dec $\leq 33$) extracted using the DisPerSE code. Only filamentary structures which are seen to persist above the 5$\sigma$ threshold are shown, along with the density contrast of the galaxy population. The density contrast is estimated using the small-scale DTFE estimator (see text).}
     \label{fig:disperse_sdss}
@@ -136,6 +140,7 @@ The first row of Figure \ref{fig:density_hab} considers the difference between a
 In order to minimize the effect of $\rho_{3Mpc}$ and $M_{\ast}$ in our cosmic web results, in the next section we weight distance distributions on both stellar mass and small scale density, when comparing the distribution of cosmic distances for the aligned and misaligned samples. This is done through normalising the histogram of the weight quantity to be consistent between distributions using a minimum of three bins. We also include the results of ETGs only to minimize the impact of morphology. We cannot do the same for LTGs due to the lack of misaligned LTGs. 
 
 \begin{figure*}
+    \centering
 	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ALL_ET_DENSITY.pdf}
     \caption[Probability density distributions of density smoothed with a Gaussian kernel at the scale of 3 Mpc \& 9 Mpc and the stellar mass, log$_{10}(M_{\ast}/M_{\odot})$ for all $\Delta$PA defined galaxies and all GalaxyZoo1 classified elliptical galaxies with a $\Delta$PA.]{Probability density distributions of density smoothed with a Gaussian kernel at the scale of 3 Mpc \& 9 Mpc and the stellar mass, log$_{10}(M_{\ast}/M_{\odot})$ (left to right) for all $\Delta$PA defined galaxies (top row) and all GalaxyZoo1 classified elliptical galaxies with a $\Delta$PA (bottom row). Aligned galaxies ($\Delta$PA < 30$^{\circ}$) are shown in red (solid line) and those with high misalignment ($\Delta$PA > 30$^{\circ}$) are in black (dashed line). Each histogram is given with Poisson errors on each bin. A two-sample KS statistic and its corresponding p-value is overlaid for comparison between the distributions in each cell and the vertical lines denote the corresponding distribution's median. Using all galaxies, the misaligned sample resides in higher density at the scales of 3 Mpc and 9 Mpc to the aligned sample respectively, but are equivalent in stellar mass. Selecting only ETGs accounts for the difference in small scale density but the misaligned sample are at lower stellar masses than the aligned.}
     \label{fig:density_hab}
@@ -152,13 +157,15 @@ The origin of misaligned galaxies residing preferentially closer to nodes could 
 % In all cases we find no statistical difference between distances to features for the aligned and misaligned galaxies. As previously noted, GalaxyZoo1 only provides classifications for 3/4 of MPL-6. 
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ALL_CW.pdf}
+    \centering
+	\includegraphics[width=0.85\linewidth]{thesis/latex/halo_assembly_manga/PA_ALL_CW.pdf}
     \caption[Probability density distributions of normalised distances to cosmic web features for all $\Delta$PA defined galaxies.]{Probability density distributions of normalised distances to cosmic web features for all $\Delta$PA defined galaxies. Distances to nodes (left) and filaments (right) are normalised by the sampling at a given redshift. The distributions of galaxies in the top row is weighted on stellar mass between the aligned (red solid line) and misaligned samples (black dashed line). The distributions are weighted by density smoothed by a Gaussian kernel at the scale of 3 Mpc for the middle row and are left unweighted for the bottom row. A two-sample KS statistic and its corresponding p-value is overlaid for comparison between the distributions in each cell. The error bars represent the poisson noise in each bin. The weighted median values for each distribution are shown by the vertical lines.}
     \label{fig:cw_all}
 \end{figure}
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/PA_ET_CW.pdf}
+    \centering
+	\includegraphics[width=0.9\linewidth]{thesis/latex/halo_assembly_manga/PA_ET_CW.pdf}
     \caption{Same as Figure \ref{fig:cw_all} but using only visually selected ETGs as found in GalaxyZoo1.}
     \label{fig:cw_et}
 \end{figure}
@@ -188,7 +195,8 @@ Semi-analytic and hydrodynamical simulations have since confirmed a correlation 
 Figure \ref{fig:2d_ratio} shows the stellar to halo mass ratio as function of $\Delta$PA. Since we do not possess errors for stellar mass or halo mass and can only roughly estimate $\Delta$PA errors, we bin our data and calculate the standard error on the mean. We split our sample at the median halo mass of $M_{\ast} = 10^{12.3} M_{\odot}$ and divide galaxies into bins with boundaries; $\Delta$PA$ = [0,5,10,20,90,180] (^{\circ})$. In each of the halo mass bins, we weigh the redshift and halo mass distributions to be consistent in each bin of $\Delta$PA. Figure \ref{fig:2d_ratio} shows no particular dependence on $\Delta$PA for this proxy of halo age. However, given the strong dependence of $M_{\ast}/M_{h}$ on $M_{h}$, we investigate this further by simultaneously considering the relationship between $M_{h}$, $M_{\ast}/M_{h}$ and $\Delta$PA. 
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/stel_halo_ratio_bin0_10_20_30_90.pdf}
+    \centering
+	\includegraphics[width=0.8\linewidth]{thesis/latex/halo_assembly_manga/stel_halo_ratio_bin0_10_20_30_90.pdf}
     \caption[The central stellar to total halo mass ratio for the $\Delta$PA sub-sample.]{The central stellar to total halo mass ratio for the $\Delta$PA sub-sample in bins of halo mass. Galaxies residing in haloes of M$_{\ast} < 10^{12.3}$M$_{\odot}$ (blue dashed line), M$_{\ast} > 10^{12.3}$M$_{\odot}$ (red dot-dashed line) and the total sample (black solid line) are divided into bins of $\Delta$PA$ = [0,10,20,30,90,180] (^{\circ})$. Error-bars are given by the standard error on the mean. Within each bin of halo mass, distributions are weighted on redshift and halo mass between all $\Delta$PA bins.}
     \label{fig:2d_ratio}
 \end{figure}
@@ -209,6 +217,7 @@ We find that fixing the gradient along $\Delta$PA has little or no effect on the
 % \end{figure}
 
 \begin{table}
+\centering
 \begin{tabular}{|l|c|c|c|}
 \hline
 $M_{h}/M_{\odot}$& & $\Delta$PA = [0, 30]($^{\circ}$) & $\Delta$PA = [30, 180]($^{\circ}$) \\ \hline 
@@ -265,7 +274,8 @@ Finally, we consider the impact of using a group catalogue to identify central g
 Mis-classification of central galaxies has implications throughout our paper. However at $M_h < 10^{13} M_{\odot}$, where effects of halo assembly are expected to be more prominent, the fraction of groups where stellar ranking results in mis-identification of a satellite as a central is estimated to be well within 10\% by \cite{campbell2015} and \cite{reddick2013}. To consider how 10\% mis-classifications could impact Figure \ref{fig:2d_ratio}, we perform 50 realisations where we remove 10\% of our central sample and replace these with satellites (with their own defined $\Delta$PA) with a consistent distribution in halo mass. This shown in Figure \ref{fig:2d_ratio_realisations} where the additional realisations are plotted in the same colour with different transparency. The overall amplitude of $M_{\ast}/M_{h}$ tends to decrease (especially for low halo mass groups), however there appears to be no noticeable changes in trend. This is expected if a signal is not strong with either population of galaxies.
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/halo_ratio_wsampling.pdf}
+    \centering
+	\includegraphics[width=0.7\linewidth]{thesis/latex/halo_assembly_manga/halo_ratio_wsampling.pdf}
     \caption[The same as Figure \ref{fig:2d_ratio} but with 50 realisations where we remove 10\% of our central sample and replace these with satellites]{The same as Figure \ref{fig:2d_ratio} but with 50 realisations where we remove 10\% of our central sample and replace these with satellites. The additional realisations are plotted in the same colour with different transparency with the original distribution overplotted as before. }
     \label{fig:2d_ratio_realisations}
 \end{figure}
