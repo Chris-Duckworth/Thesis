@@ -1,5 +1,5 @@
 \colorlet{chaptergrey}{gray}
-\chapter[Kinematically misaligned galaxies in IllustrisTNG]{Kinematic misalignment in TNG}
+\chapter[Kinematically misalignment in IllustrisTNG]{Kinematic misalignment in TNG}
 \label{ch:halo_assembly}
 \vspace{-5.25in}
 \includegraphics[height=1.39in]{thesis/latex/misalignment_MaNGA/kin_mis_chapter_heading_grey.pdf}
@@ -8,9 +8,19 @@
 \epigraph{This chapter is based on Duckworth, Tojeiro and Kraljic, in MNRAS, 492, Issue 2, 2020 and Duckworth, Starkenburg, Genel, Davis, Habouzit, Kraljic and Tojeiro (submitted). Here we investigate kinematically misaligned galaxies in the cosmological scale simulation IllustrisTNG. We make direct comparison to observations and investigate the relationship of misalignment identified at $z=0$ with the evolutionary histories of stellar angular momentum and halo spin.}
 
 \section{Introduction}
-\red{motivate the comparison of hydrodynamical simulations to observations with empathsis of angular momentum (genel, dephillipis, starkenburg, khim.}
+In parallel with the advances of spectrographs leading to large scale IFS surveys, developments in both modelling and computing power have lead to the onset of cosmological scale simulations providing thousands of galaxies with broadly realistic properties. In particular, cosmological hydrodynamical simulations are powerful tools to understand the evolutionary history of galaxies and the build up of their angular momentum.
 
-In this chapter we describe the construction of a mock MaNGA sample created in the hydrodynamical simulation of IllustrisTNG. \S\ref{sec:sim_data_TNG} introduces the IllustrisTNG simulation and the creation of the mock observational sample. \S\ref{}
+Ensuring that we are comparing apples to apples is a recurring theme when attempting to recover observations with simulations. De-convolving dissimilarity in how parameters are computed and physical differences in simulations is crucial in understanding how well observations are recovered. In the context of angular momentum and mass build up, recent work by \citet{sande2019} compare observations (SAMI, ATLAS\textsuperscript{3D}, CALIFA and MASSIVE surveys) to various predictions of hydrodynamical simulations (e.g. \texttt{EAGLE}; \citet{schaye2015}, \texttt{Horizon-AGN}; \citet{dubois2014}, \texttt{HYDRANGEA}; \citet{bahe2017}) at $z \sim 0$. Despite the vast improvement of cosmological simulations in recent years which broadly reproduce many galaxy relations, there are distinct differences in different stellar mass ranges for each simulation in each of physical size, shape and rotation with respect to observations.
+
+Recent efforts to compare kinematics in simulations to observations include the \texttt{SimSpin} package \citep{harborne2019, harborne2020} who create a flexible framework to construct mock IFS observations from particle data in a range of simulations. With an emphasis on angular momentum, they provide a consistent methodology to compute observational properties such as $\lambda_R$ and $V/\sigma$ which is of particular relevance to the focus of this chapter.
+
+Specific to the field of kinematic misalignment, direct comparison between observations and simulations have been made in parallel during the time of this thesis work. In the SAMI survey, \citet{bryant2019} utilised misalignments for $\sim$1200 galaxies, demonstrating that morphology holds the strongest correlation with the likelihood of star-gas decoupling, ahead of local environment and stellar mass. 
+
+A direct comparison of this observational SAMI sample to the cosmological simulation of \texttt{Horizon-AGN} is made by \citet{khim2019}. They find that a selected subsample of galaxies in \texttt{Horizon-AGN} reproduces the general trends of misalignment fraction with morphology and stellar mass. Despite this, they find that simulated galaxies in clusters are far more likely to be misaligned than their observed counterparts. Finally, there is observational evidence \citep[e.g.][]{davis2016, chen2016} that counter-rotation between stars and gas (usually defined as $> 150^{\circ}$ is a stable-state leading to a boost in galaxies with these typical offsets. This isn't reproduced by \texttt{Horizon-AGN}, likely due to the spatial resolution of the simulation (roughly 1kpc) which is difficult to resolve thin disks and hence realistically balance the effect of stellar torques and relaxation. A caveat in the work of \citet{khim2019} is that they do not aim to directly recreate the SAMI sample or mock observations, which convolutes physical differences between observation and simulation with discrepancies due to measurement and how properties are computed. 
+
+Finally, \citet{starkenburg+19} considered the nature of counter-rotation ($\mathrm{> 90^{\circ}}$ between rotational axes of stars and gas) in low mass galaxies in Illustris. They identify the key role of gas loss through black hole (BH) feedback and flyby interactions to enable misalignment through re-accretion of misaligned material. The mechanisms for decoupling gas are not fully determined and are likely a combination of both external and internal processes, both of which are seen to also shape the stellar angular momentum content of galaxies at $z=0$. To understand how these non-linear processes relate both to angular momentum retention from the dark matter halo and how this propagates to star-gas decoupling, a combination of both observations and simulations are required. 
+
+In this chapter we describe the construction of a mock MaNGA sample created in the hydrodynamical simulation of IllustrisTNG and make direct comparisons to the observational results presented in Chapter 2, before investigating the evolution histories of angular momentum. \S\ref{sec:sim_data_TNG} introduces the IllustrisTNG simulation and the creation of the mock observational sample. \S\ref{sec:manga_tng_comp} makes direct comparison between IllustrisTNG and MaNGA. \S\ref{sec:tng_ang_mom_evo} describes the evolutionary histories of angular momentum for the misaligned galaxies, before discussing our findings in \S\ref{sec:tng_discussion} and summarising in \S\ref{sec:tng_summary}.
 
 \section{Simulation data} \label{sec:sim_data_TNG}
 \subsection{IllustrisTNG} 
@@ -71,17 +81,17 @@ The TNG100 mock sample reproduces the general trends well, when considering the 
     \label{fig:TNG_mpl8_stelM}
 \end{figure}
 
-\subsection{Morphological dependence}
+\subsection{Morphological dependence} 
 We divide our mock MaNGA sample based on the instantaneous star formation rate (SFR) of the galaxy. Here, we define SFR for all gas cells within twice the stellar half mass radius of a given galaxy. The star forming main sequence for all galaxies is found by fitting a power law as a function of stellar mass. A galaxy is then flagged into one of three categories; star forming, green valley or quenched depending on its deviation above or below the main sequence \citep{pillepich2019}. The selected deviations from the main sequence are as follows; star forming galaxy: $\mathrm{\Delta \log_{10}(SFR) > −0.5}$, green valley galaxy: $\mathrm{-1.0 < \Delta \log_{10}(SFR) < -0.5}$ and quenched galaxy: $\mathrm{\Delta \log_{10}(SFR) <= -1.0}$. \red{check this.}
 
 The bottom panel of Figure \ref{fig:group_morph_PA}, shows the $\Delta$PA distribution for the TNG100 sample split into centrals and satellites. Comparing to the observational sample in the top panel of Figure \ref{fig:group_morph_PA}, the morphological trends remain qualitatively the same with quenched/ETGs (star forming/LTGs) more likely to be misaligned (aligned).
 
 Our choice to compare populations split on visual morphology in observations to SFR in simulations is one of necessity. The aim of this work is to explore the relationship of visual morphology with decoupled rotation. Unfortunately we don't currently have the equivalent classifications in IllustrisTNG100, so use an appropriate proxy. In future work, we will look at the relationship between observations and simulations using machine learning classifications of morphology, however, in the following subsections we follow the evolutionary history of the mock sample split by sSFR.
 
-\section{Evolution of angular momentum}
+\section{Evolution of angular momentum} \label{sec:tng_ang_mom_evo}
 \subsection{Magnitudes}
 \red{add more introduction / why you are talking about angular momentum now.}
-In this section, we consider the angular momentum content of our TNG100 mock sample back to $z=1$ for stars, gas and dark matter individually. Angular momentum for our TNG100 galaxies is defined by the intrinsic specific angular momentum of their particles/cells:
+In this section, we consider the angular momentum content of our TNG100 mock sample back to $z=1$ for stars, gas and dark matter individually. The prior time evolution such properties for each galaxy is followed by considering the main progenitor branch (most massive defined by stellar mass) in the sublink merger trees \citep{rgomez2015}. Angular momentum for our TNG100 galaxies is defined by the intrinsic specific angular momentum of their particles/cells:
 \begin{equation}
 \mathrm{j_{k} = \frac{1}{\sum_{n} m^{(n)}} \sum_{n} m^{(n)}\boldsymbol{x}^{(n)} \times \boldsymbol{v}^{(n)}}
 \end{equation}
@@ -131,10 +141,22 @@ Working back from $z=0$, we note that $\mathrm{\alpha_{STARS - GAS}}$ for the al
     \label{fig:3D_alpha_evo}
 \end{figure*}
 
-\section{Discussion}
-\red{work out if you want to include the discussion from DI here or if you want an overall discussion for multiple chapters.}
+\section{Discussion} \label{sec:tng_discussion}
+In the previous two chapters we have demonstrated the relationship of kinematic misalignment with morphology, stellar angular momentum and dark matter halo spin. In the following we put our results in context and highlight the potential of using the decoupling of star-gas rotation to identify underlying properties of a galaxy. 
 
-\section{Summary}
+We note the close relationship of our findings of our samples with respect to the work of \citet{starkenburg+19}. They investigate the origin of star-gas decoupling (in this instance $ > 90^{\circ}$) using low mass galaxies (i.e. $2 \times \mathrm{10^{9} < M_{\ast} < 5 \times 10^{10}}$) in the original Illustris simulation. Despite extending the mass range and only considering the ensemble average for aligned and misaligned galaxies split at $\Delta$PA$ = 30^{\circ}$, we still find the same qualitative trends of lower angular momentum and lower gas mass fractions for misaligned galaxies (in comparison to aligned). 
+
+While outside the scope of this work, we note that their estimation of relaxation timescales (i.e. until realignment of rotation axes) is of the order Gigayears. This appears to be roughly comparable to toy-model estimates \citep[see;][albeit for ETGs]{davis2016}. Here we also demonstrate the transient nature of star-gas decoupling (left panels, Figure \ref{fig:3D_alpha_evo}). Working back from $z=0$, we note that $\mathrm{\alpha_{STARS - GAS}}$ for the aligned and misaligned samples (at $z=0$) converges in the majority of cases before $z=1$. Since we are only considering the ensemble average for misalignment selected at $z=0$, we cannot comment on the timescales of misalignment here since the average may include several events that decouple the rotation.
+
+In contrast, we see that the magnitude of specific angular momentum for stars, gas and DM for misaligned objects (at $z=0$) remains fundamentally lower going to at least $z=1$. This suggests that while star-gas misalignment at $z=0$ is a transient property, \textit{its likelihood is correlated with the angular momentum content of the halo at early times}. In part, the correlation must be driven by the lower angular momentum content of the stellar component. This inherently leads to longer relaxation timescales (i.e. longer star-gas decoupling) due to weaker stellar torques acting on the misaligned gas component and hence a higher likelihood of being misaligned at $z=0$.
+
+We note the apparent relationship of misalignment with the different evolution of low and high spin haloes due to environment. In Horizon-AGN, \citet{khim2019} show that the misalignment fraction strongly increases in cluster environments. While not explicitly shown in this work, we find that misaligned satellites are typically closer to group centres, indicating the importance of gas stripping or interactions. In observations, \citet{li2019} find that at least 40\% of misalignment can be attributed to recent mergers or interactions. The environment of a given galaxy, modulating the probability of mergers/interactions and hence the spin of the halo/galaxy appears to be an important factor in dictating the misalignment fraction. However, current studies of the environmental dependence of misalignment in observations are inconclusive \citep[e.g. preference for misalignment in overdensity vs isolation; Chapter 5 vs][]{jin2016}.
+
+We also note TNG100's ability to not only reproduce a reasonable distribution of $\Delta$PA with respect to the MaNGA sample (Figure \ref{fig:total_pa_dist}) once accounting for variances in mass between the $\Delta$PA defined samples in MaNGA and TNG100, but also reproducing the strong trends with morphology found in observations (Figure \ref{fig:group_morph_PA}). 
+
+Whether the trigger of misalignment is internal or external, it appears to be clearly linked to a lowered gas mass (Figure \ref{fig:delPA_gasM}). 
+
+\section{Summary} \label{sec:tng_summary}
 In this work, we construct a mock MaNGA sample in IllustrisTNG100 to compare directly to observations and understand the build up of angular momentum in kinematically misaligned galaxies. Our conclusions are as follows:
 
 \begin{enumerate}
