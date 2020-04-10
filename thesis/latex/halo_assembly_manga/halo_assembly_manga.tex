@@ -8,15 +8,59 @@
 \epigraph{This chapter is partially based on Duckworth, Tojeiro, Kraljic, Sgr\'o, Wild, Weijmans, Lacerna and Drory, in MNRAS, 448, Issue 1, 2019 and Kraljic, Duckworth, Tojeiro et al. (in prep.). Here, we investigate how large scale IFS surveys can be utilized to understand the relationship between galaxy kinematics and their large-scale environment, in the context of dark matter halo assembly.}
 
 \section{Introduction}
+\red{Expand on relationship between cosmic web and galaxy properties - maybe with a focus on spin alignment? - certainly re-introduce C. Welker stuff and extended TTT. introduce MPL-6 somehow?  talk about transition from baryonic processes on small scales and transition to how this relates to large scale structure and halo assembly.}
 
+In Chapters 2 and 3, we demonstrated how galaxy kinematics are closely related to morphological properties, baryonic processes such as AGN feedback, and the characteristics of its surrounding dark matter halo. The stellar (dark matter halo) mass of a galaxy encodes a lot of its evolution, demonstrating that \textit{local environment} (or over-density) can explain a large part of the diversity of properties we observe.
 
+As introduced in \S\ref{sec:cosmic_web_intro}, galaxies on large scales are organised within the cosmic network of filamentary structure. Dark matter haloes and their constituent galaxies are subject to the large-scale anisotropic forces throughout their formation and evolution, in particular shaping their initial angular momentum content, before non-linear baryonic processes take hold. Their is growing evidence that the cosmic web environment of a galaxy, also plays a significant role in galaxy evolution and is, at least partially, driving their morphology. 
 
-\section{Kinematically misaligned galaxies and halo assembly} 
-In this chapter, the kinematic misalignment, $\Delta$PA, of central galaxies will be correlated with various environment dependent parameters for the surrounding halo. Following the discussion of \citet{hahn2009}, the current accretion rate is correlated with the large-scale tidal environment. Low-mass haloes in the vicinity of large haloes or massive structures will have their accretion `stalled' as tidal forces overcome their ability to accrete \citep[see also;][]{wang2007,dalal2008,lacerna2011}. Accordingly, this would lead to a relatively earlier formation time and a lack of on-going accretion seen today. Conversely low-mass haloes in environments of low magnitude tidal forces will continue accreting, and could have a late halo assembly time and continued gas accretion onto the central galaxy today. 
+Revisiting tidal torque theory \citep[TTT; e.g.][]{hoyle1951, peebles1969} in the context of large-scale anisotropic environment, \citet{codis2015} explain the relative angular momentum distribution of haloes with respect to neighbouring filaments and walls. The misalignment between the inertia tensors of the proto-haloes and the directionality of the tidal tensor due to the neighbouring wall or filament leads to a spin alignment for low mass haloes. As these haloes grow in mass hierarchically, merging with other haloes and they lose this preferential alignment with large scale structure. Due to the flow of matter along walls and filaments, mergers often happen in this plane, leading to \textit{flip} in direction, so that higher mass dark matter haloes are preferentially perpendicular to the orientation of the tidal field \citep[e.g.][]{Codis2012, dubois2014, GaneshaiahVeena2018}. This is, of course, motivated from cosmological N-body simulations and understanding how this propagates to observations is complex. In simulations, the constituent galaxies appear to retain a memory of the spin orientation (with respect to large scale structure) as dictated by their host dark matter halo \citep[e.g.][]{codis2018, Kraljic2019flip}. The mass dependence of the spin alignment \textit{flip} is, however, debated and likely dependent on different choices for baryonic processes and the scale of the neighbouring filamentary structure.
+
+\red{add figure of spin orientation with disperse overlay?}
+
+Historically, exploring the relationship between the spin direction of galaxies and large scale structure has been difficult. Without spatially resolved spectra of galaxies, we are reliant on projected shapes which introduces degeneracies with respect to the actual spin vector direction \citep[e.g. see Fig 2. in][for example of degeneracies that can occur]{motloch2020}. Due to this, and the different approaches to re-constructing the cosmic web, studies are often conflicting in findings \citep[e.g. spiral galaxies having parallel vs perpendicular orientations with respect to the cosmic web][]{tempel2013a, tempel2013, lee2007, jones2010, zhang2015}. These differences due to the reconstruction of the cosmic web can likely be explained due a difference in chosen scales. In hydrodynamical simulations, the transition mass from preferential parallel alignment to perpendicular alignment is very much dependent on the scale of the filamentary structure, such as width \citep{ganeshaiahveena2019, Kraljic2019flip}. Averaging over an ensemble of filamentary scales will likely wash out this transition, and hence preferential alignment in either direction. 
+
+The other half of the problem can be solved, however, by having kinematic information for a large population of galaxies. Kinematic (rotational) position angles help break the degeneracy of shape orientation, and provide more robust measures of directionality. We are now in the era of multiple IFS surveys that may observe enough galaxies to find a significant detection of spin alignment. In section \S\ref{sec:spin_alignment}, we explore spin alignment in MaNGA for spirals and S0 galaxies.
+
+The orientation of galaxies with respect to large-scale structure is, however, one aspect to determining the relationship between galaxy evolution and the cosmic web. As introduced in \S\ref{sec:halo_assembly_bias_intro}, the large-scale tidal forces created by the cosmic web are motivated to modulate the assembly history of dark matter haloes and their constituent galaxies, once the effect of mass has been taken into account. 
+
+In parallel with detecting spin alignment, tracing the impact of dark matter halo assembly on galaxy observables in the local Universe is a difficult prospect. A powerful approach is to consider the wealth of spatially resolved information from surveys such as MaNGA and SAMI to deconvolve the role of differences in halo assembly history. In \S\ref{sec:halo_assembly}, we investigate if kinematically misaligned central galaxies assemble their mass differently, and are in preferentially different locations in the cosmic web.
+
+\section{Spin alignment of spiral and S0 galaxies in MaNGA} \label{sec:spin_alignment}
+\red{talk about C. Welker and Krowleski papers.}
+
+\subsection{Data and Methods}
+\subsubsection{Galaxy sample}
+\subsubsection{DisPerSE}
+\subsubsection{Angular momentum directions}
+
+\subsection{Spin alignment}
+\subsubsection{LTGs}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/spin_fil_LTGs_2in1.pdf}
+    \caption{Alignment between neighbouring filament and spin direction of late type galaxies calculated from the thin disk approximation. Each panel shows the probability density distribution (blue) of the cosine angle between the direction of the filament segment and the spin direction. Errors are calculated through bootstrapping and the grey line (with associated errors) corresponds to the expected distribution for a completely random alignment. The left panel shows for all LTGs in our sample, whereas the right panel shows the distribution only for those with a stellar mass $< 10^{10} M_{\odot}$. We find that for all masses LTGs are preferentially \textit{parallel} orientated with respect to the neighbouring filament, with low mass showing a more significant alignment signal.}
+    \label{fig:ltgs_spin_alignment} 
+\end{figure}
+
+\subsubsection{S0s}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{thesis/latex/halo_assembly_manga/spin_fil_S0s_2in1.pdf}
+    \caption{Alignment between neighbouring filament and spin direction of lenticular galaxies calculated from the thin disk approximation. Each panel shows the probability density distribution (red) of the cosine angle between the direction of the filament segment and the spin direction. Errors are calculated through bootstrapping and the grey line (with associated errors) corresponds to the expected distribution for a completely random alignment. The left panel shows for all S0s in our sample, whereas the right panel shows the distribution only for those with a stellar mass $< 10^{10} M_{stel}$. We find that for all masses lenticulars are preferentially \textit{perpendicular} orientated with respect to the neighbouring filament, with low mass showing a more significant alignment signal.}
+    \label{fig:s0_spin_alignment}
+\end{figure}
+
+\subsection{Discussion and Summary}
+
+\section{Kinematically misaligned galaxies and halo assembly} \label{sec:halo_assembly}
+In this section, the kinematic misalignment, $\Delta$PA, of central galaxies will be correlated with various environment dependent parameters for the surrounding halo. Following the discussion of \citet{hahn2009}, the current accretion rate is correlated with the large-scale tidal environment. Low-mass haloes in the vicinity of large haloes or massive structures will have their accretion `stalled' as tidal forces overcome their ability to accrete \citep[see also;][]{wang2007,dalal2008,lacerna2011}. Accordingly, this would lead to a relatively earlier formation time and a lack of on-going accretion seen today. Conversely low-mass haloes in environments of low magnitude tidal forces will continue accreting, and could have a late halo assembly time and continued gas accretion onto the central galaxy today. 
 % We explore whether position with respect to filamentary structures identified in the cosmic web, halo age and estimated group occupancy correlate with more recent accretion observed on the central galaxy of the group. A younger halo corresponds, by definition, to more recent dark matter accretion and a richer recent merger history. We explore the idea that low-mass haloes have their cold flow accretion halted due to large-scale tidal environment as indicated by the halo age or vicinity to cosmic web features. 
 
-\subsubsection{Estimators of halo assembly and environment}
-In this chapter we explore these ideas with the following tests:
+\subsection{Estimators of halo assembly and environment}
+In this section we explore these ideas with the following tests:
 \begin{enumerate}
 \item Cosmic web classification (Section \ref{sec:cw_classification_hab})
 \begin{itemize}
@@ -33,10 +77,10 @@ In this chapter we explore these ideas with the following tests:
 \end{enumerate}
 In each section we present both our method and results. The impact of environment on kinematically misaligned galaxies has been previously studied in MaNGA. Using a sample of 66 misaligned galaxies, \citet{jin2016} found that the fraction of misalignment varies with galaxy properties such as stellar mass and sSFR. Regardless of sSFR, they find that kinematically misaligned galaxies are typically more isolated. Could these correspond to the later forming haloes?
 
-\section{Data}
+\subsection{Data}
 In this chapter, we base our analysis on 4633 unique galaxy observations corresponding to the 6th MaNGA product launch (MPL). This reflects the completion of the survey as of mid-2018 (data released publicly December 2018). \red{Here, we describe the additional data used and our sample selection.}
 
-\subsection{Stellar mass and halo mass definitions} \label{sec:mass_hab}
+\subsubsection{Stellar mass and halo mass definitions} \label{sec:mass_hab}
 We use stellar masses estimated in the New-York University Value Added Catalogue from the K-correct routine \citep[NYU-VAC;][]{blanton2005}. To analyse the incident effects onto central galaxies as a function of environment, we require both group identification and estimations of the total halo mass. \citet{yang2007} (Y07 hence-forth) present an adaptive group finding algorithm based on the NYU-VAC to assign galaxies to haloes and then estimate and revise group properties through iteration. We will summarise the basic steps here. Potential group centres are first found through a friend-of-friends algorithm with small linking lengths in redshift space. All galaxies not currently linked are also considered as potential centres. For each tentative group, the combined luminosity of all group members with 
 \begin{equation}
 ^{0.1}M_r - 5log(h) \leq -19.5
@@ -56,7 +100,7 @@ We select only galaxies classified as centrals corresponding to the most massive
     \label{fig:stel_halo_dist}
 \end{figure}
 
-\subsection{Sample selection} \label{sec:samp_sec}
+\subsubsection{Sample selection} \label{sec:samp_sec}
 While the complete MaNGA sample may be unbiased to morphology, we must proceed with care when selecting a sub-sample usable for kinematic disturbance. To remove spurious PA fits we eyeball the entire MPL-6 sample and remove all galaxies which have a largely incomplete velocity field, poor or biased PA fit or are virtually face-on so that little or no rotational component is along the line of sight. This removes approximately half of MPL-6 observations. The majority of galaxies removed have largely incomplete gas velocity fields and for that reason our analysis naturally excludes gas-poor and slowly rotating elliptical galaxies. 
 
 Recent studies have found that the fraction of slow rotators increases steeply with stellar mass and has a weak dependence on environment once this is controlled for \citep[e.g.][]{greene2018,lagos2018}. We note that our natural exclusion of gas-poor high-mass galaxies is reflected in the stellar mass distribution of the $\Delta$PA defined sample in Figure \ref{fig:samp_cons}. \red{Reference NSA target catalogue?}
@@ -92,7 +136,7 @@ Final sample & 925 & 812 & 136 (0.167) & 456 (0.561) \\ \hline
 
 We are looking for accretion due to large-scale influence, so we remove all obvious on-going mergers through visual inspection of both the field photometry and IFU observations. We also identify target galaxies interacting with close pairs or neighbours. While this visual inspection should identify the majority of on-going major mergers, we note that our identifications are clearly subjective. We remove $\sim$50 galaxies, identified to be merging or interacting with a nearby neighbour. After matching to the Y07 group catalogue for halo mass we are left with 925 central galaxies which we use in this chapter. 
 
-\section{Cosmic web classification} \label{sec:cw_classification_hab}
+\subsection{Cosmic web classification} \label{sec:cw_classification_hab}
 We explore the ability of a low-mass halo to accrete with respect to where it falls within the cosmic web. 
 % \citet{ZOMGI} find that low mass halos within large filaments typically correspond to this `stalled' scenario. Dark matter and baryonic material flows along the filament towards high density nodes (intersection of filaments), which starves the low mass halo residing between nodes (however accretion may be allowed to continue perpendicular to the filament - should still be a lower rate today). Conversely low mass halos residing at the convergence point of multiple small filaments correspond to environments of low tidal force strength as isotropic accretion is allowed to continue. This test correlates distances to various cosmic web features with $\Delta$PA.
 To characterise topological features, such as the filaments which could lead to the suppression of accretion, the Discrete Persistent Structure Extractor code \citep[DisPerSE;][]{sousbie2011a,sousbie2011b} is applied to a modified SDSS DR10 spectroscopic catalogue \citep{tempel2014}. 
@@ -114,7 +158,7 @@ To characterise topological features, such as the filaments which could lead to 
 
 % Being reliant on the three-dimensional distribution of galaxies, DisPerSE is therefore affected by redshift space distortions. On large-scales this corresponds to the Kaiser effect \citep{kaiser1987}, which acts to increase the contrast of the skeleton due the coherent motion of galaxies with the growth of structure \citep[e.g.][]{shi2016}. On small-scales, however, the Fingers of God effect \citep[FOG;][]{jackson1972,tulley1978} derives from random motions of galaxies within virialized haloes. The latter can elongate structure in redshift space leading to erroneous identification of filaments. We correct for the FOG effect using the technique outlined in \citet{kraljic2018}.
 
-\subsection{Cosmic web distances}
+\subsubsection{Cosmic web distances}
 Having constructed a skeleton of the cosmic web, a galaxy's environment can be described by finding its vicinity to various features of the skeleton. The cosmic web comprises of low density `void' regions which are enclosed by `walls' of structure which become filaments at points of intersection. The gravitational potential of the filaments dictate the flow of the matter, which at the point of intersection, feed high density regions interpreted as `nodes'. Along the filament, saddle points remain as minima between the flows towards nodes.  
 % GAMA has a completeness of > 98\% down to a r-band apparent magnitude of $m_r$ = 19.8 whereas... Care must therefore be taken when making any direct comparisons between GAMA and DR7.
 
@@ -125,7 +169,7 @@ We do not include analysis with respect to the walls since we limited to low num
 
 Construction of the cosmic web from any observation is influenced by the completeness and the sampling of the galaxy sample. The modified SDSS DR10 spectroscopic sample is complete to $m_r$ = 17.77. A sample containing only brighter galaxies will naturally only identify stronger/larger filamentary features and hence smaller substructures will be missed. In addition, the lower the sampling of galaxies, the lesser the accuracy of the actual position of cosmic web features. To correct for this, the distances are normalised by the mean inter-galaxy separation, $\left\langle D_z \right\rangle$ at a given redshift, as such $\left\langle D_z \right\rangle = n(z)^{-1/3}$ where $n(z)$ is the number density. 
 
-\subsection{Environmental density and stellar mass}
+\subsubsection{Environmental density and stellar mass}
 Before we consider the role of the cosmic web, we consider the role of environmental density and stellar mass in our results. A dependence on small scale density is an indirect effect of halo mass and would not probe the large-scale anisotropy of the cosmic web. It is also important to isolate the role of stellar mass and morphology following their distinct gradients with respect to cosmic web features found in GAMA \citep{kraljic2018}.
 
 Figure \ref{fig:density_hab} shows the distributions of densities and stellar mass for the aligned and misaligned samples. Density used in this work is computed using a Delaunay tessellation of the discrete galaxy positions through the DTFE estimator, smoothed with a Gaussian kernel at local scales (3 Mpc) and at large scales (9 Mpc). 
@@ -143,7 +187,7 @@ In order to minimize the effect of $\rho_{3Mpc}$ and $M_{\ast}$ in our cosmic we
     \label{fig:density_hab}
 \end{figure*}
 
-\subsection{Results of cosmic web distances} \label{sec:cw_res}
+\subsubsection{Results of cosmic web distances} \label{sec:cw_res}
 Figure \ref{fig:cw_all} shows the distance probability density distributions of aligned and misaligned galaxies with respect to nodes (left) and filaments (right). The top row shows the two samples weighted on stellar mass, the middle row weighted on small scale density (3 Mpc smoothed) and the bottom row shows the raw distributions. The results of a two-sample KS test with corresponding weightings to the cumulative distribution function are overlaid in each cell. 
 % This is to assess if any signal is an indirect result of halo mass, rather than the tidal forces we aim to probe. 
 
@@ -167,7 +211,7 @@ The origin of misaligned galaxies residing preferentially closer to nodes could 
     \label{fig:cw_et}
 \end{figure}
 
-\subsection{The role of halo mass} 
+\subsubsection{The role of halo mass} 
 Our primary aim in this section is to isolate if vicinity to filaments can impact the rate of present-time accretion on a central galaxy in a low-mass halo. Including high-mass haloes in our sample may counteract any observable signal as they are possible candidates responsible for quenching accretion. High-mass, typically old haloes, are the opposite of what we are trying to target: young, still forming low-mass haloes (with respect to old low-mass haloes). 
 
 We now consider $D_{skel}$ for low-mass haloes only. \citet{tojeiro2017} found signal of halo assembly bias in low-mass haloes using the stellar to halo mass ratio in GAMA. Low-mass haloes residing in regions of stronger tidal forces were found to form earlier irrespective of density, with this trend apparently reversed at high mass. This signal was found to be strongest for haloes of mass $M_h \sim 10^{12.3} M_{\odot}$, however a slight trend was found even at $M_h \sim 10^{12.74} M_{\odot}$. To ensure we have enough objects for a statistically significant sample we therefore consider all central galaxies residing in haloes of mass: $M_h \sim 10^{12.5} M_{\odot}$. Figure \ref{fig:mh_cw} shows the distance probability density distributions for the whole $\Delta$PA defined sample and GalaxyZoo1 defined ETGs only. For all weighting schemes, we find p-values consistently above the 0.1 significance level and hence conclude the null hypothesis that the aligned and misaligned galaxies are consistent in distance distributions with respect to filaments. This holds true regardless of morphology selection.
@@ -178,7 +222,7 @@ We now consider $D_{skel}$ for low-mass haloes only. \citet{tojeiro2017} found s
     \label{fig:mh_cw}
 \end{figure}
 
-\section{Stellar to halo mass ratio}\label{sec:MsMh_hab}
+\subsection{Stellar to halo mass ratio}\label{sec:MsMh_hab}
 In this section we introduce an observational proxy for halo formation time: the central stellar to total halo mass ratio. Its use was motivated in \citet{wang2011} who explored the correlation between various halo properties which were identified within a set of seven N-body simulations using the P\textsuperscript{3}M code described in \citet{jing2007}. One of the most important properties is its formation time, $z_f$ which was shown to correlate with galaxy properties such as SFR, galaxy age and colour. The formation time in this instance is defined as the redshift at which the main progenitor has formed half of the mass of the final halo. %An observational counterpart must be constructed as $z_f$ cannot be determined from galaxies alone. 
 They establish that formation time shows a tight correlation with the sub-structure fraction, $f_s = 1 - M_{main}/M_h$, where $M_{main}$ and $M_h$ are the main \textit{sub}-halo mass and the halo mass respectively \citep{gao2007}. 
 The ratio of $M_{main}$ and the total halo mass is seen to act as an robust estimate for formation time. Following \citet{lim2015}, we use the following as an observational proxy,
@@ -188,7 +232,7 @@ f_c = \frac{M_{*,c}}{M_h},
 where $M_{*,c}$ is the stellar mass of the central galaxy. The $M_h$ in this instance is found using the group stellar mass ranking from Y07. $M_{*,c}$ is a reasonable estimator for the main sub-halo mass $M_{main}$ however they do not hold an exactly monotonic relation. Given this and that $f_s$ is not perfectly correlated with formation time, $f_c$ can only be considered to be a relative proxy of $z_f$ as shown in \citet{lim2015}. A higher value of $M_{*,c}/M_h$ should correspond to a relatively older halo. 
 Semi-analytic and hydrodynamical simulations have since confirmed a correlation between halo assembly time and the stellar to halo mass ratio, and have shown how halo formation time partly explains the scatter in the stellar mass to halo mass relation \citep[e.g.][]{matthee2017,tojeiro2017,zehavi2018}. Observationally, \cite{tojeiro2017} show that the stellar to halo mass ratio of central galaxies varied with position within the cosmic web, at fixed halo mass. In this section, we investigate whether recent accretion history, associated with younger halos, might be visible in the kinematics of gas and stars.
 
-\subsection{Results of the halo age proxy}
+\subsubsection{Results of the halo age proxy}
 Figure \ref{fig:2d_ratio} shows the stellar to halo mass ratio as function of $\Delta$PA. Since we do not possess errors for stellar mass or halo mass and can only roughly estimate $\Delta$PA errors, we bin our data and calculate the standard error on the mean. We split our sample at the median halo mass of $M_{\ast} = 10^{12.3} M_{\odot}$ and divide galaxies into bins with boundaries; $\Delta$PA$ = [0,5,10,20,90,180] (^{\circ})$. In each of the halo mass bins, we weigh the redshift and halo mass distributions to be consistent in each bin of $\Delta$PA. Figure \ref{fig:2d_ratio} shows no particular dependence on $\Delta$PA for this proxy of halo age. However, given the strong dependence of $M_{\ast}/M_{h}$ on $M_{h}$, we investigate this further by simultaneously considering the relationship between $M_{h}$, $M_{\ast}/M_{h}$ and $\Delta$PA. 
 
 \begin{figure}
@@ -228,12 +272,12 @@ $M_{h}/M_{\odot}$& & $\Delta$PA = [0, 30]($^{\circ}$) & $\Delta$PA = [30, 180]($
 \label{tab:chisq}
 \end{table}
 
-\section{Halo occupation distribution} \label{sec:HOD_hab}
+\subsection{Halo occupation distribution} \label{sec:HOD_hab}
 In this section we introduce the HOD function and how it can be used to infer halo age. In describing the relationship between galaxies and dark matter haloes, HODs are a useful prescription to determine models of galaxy formation and evolution \citep[e.g.][]{berlind2003}. They provide a probability distribution function $P(N|M_h)$ for a set of virialised haloes where $N$ is the number of hosted galaxies for a given halo mass $M_h$. A fundamental assumption underlying HOD modelling is that the galaxy occupation is purely dependent on the halo mass. Typically the observed galaxy clustering is used to construct the empirical relationship that allows mock dark matter haloes to be populated with galaxies. Assembly bias would directly affect the observed clustering of galaxies and hence challenge any interpretation using the HOD framework. 
 
 Continuing our discussion, low-mass haloes near large haloes are expected to cease formation earlier. This leads to a boost of galaxy clustering at this halo mass range relative to the overall sample as they live preferentially in high density regions. \citet{zehavi2018} previously investigated the dependence of occupation functions on various properties such as large-scale environmental density and halo age using semi-analytical galaxy models applied to the Millennium simulation \citep{springel2005} \citep[See also;][who confirmed these results using the hydro simulations of EAGLE and Illustris]{artale2018}. They find that higher density environments generally act to populate lower mass haloes with central galaxies. A stronger dependence can be found on halo age, however, as earlier forming low-mass haloes are more likely to host central galaxies. In addition, earlier forming haloes are likely to host fewer satellites relative to late forming haloes at fixed halo mass. A simple explanation is that the early forming haloes provide more time for their constituent satellite galaxies to merge with the central. More massive central galaxies may therefore reside in low-mass haloes that formed early due to this general in-flow, analogous to a higher stellar to halo mass ratio. 
 
-\subsection{Background subtraction}
+\subsubsection{Background subtraction}
 To understand the assembly history of a central galaxy's sub-halo we must consider the role of satellites that contribute to the hierarchical structure growth of its halo merger tree. However, we are limited by the magnitude and typical size of galaxies inhibiting small substructure around a main sub-halo. \citet{liu2011} demonstrate a common method for counter-acting the lack of spectroscopic information for satellite galaxies through counting possible photometric group members. Their numbers are then statistically corrected to remove the contribution of contaminant foreground and background galaxies outside of the group. This enables a lower limit of apparent magnitudes which can be accessed through use of the background subtraction technique. \citet{rodriguez2015} extend this formalism to HOD modelling and provide the technique we implement here. For a complete description of the technique we direct the reader to this reference, however we will summarise the basic concepts here.
 
 Background subtraction requires two catalogues that share the same sky area; we will use our $\Delta$PA defined MaNGA centrals with their identified groups in combination with the photometric SDSS catalogue. For the photometric galaxies in the sky region of a group, their absolute magnitudes are calculated at the redshift of the group, $z_{f}$. The total number of galaxies with an absolute magnitude $M \le M_{min}$ are then counted within a circle around the group centre with its radius determined by the projected characteristic radius on the sky. In order to remove background galaxies, an estimation of the local density with respect to the average catalogue density must be made. All galaxies with $M \le M_{min}$ are recounted in concentric annuli centred on the group to provide the local density. A correction for the total number of galaxies in the group can then be estimated by subtracting the local background density multiplied by the group's projected area. The HOD is then constructed by binning the groups into mass intervals and averaging.
@@ -244,7 +288,7 @@ Results from the background subtraction technique have also been compared to res
 
 MPL-6 does not provide a large enough sample size to construct a reliable two-halo term in HOD modelling through calculation of the cross-correlation function. Background subtraction therefore represents the best estimation for this sample size.
 
-\subsection{Results of the HOD}
+\subsubsection{Results of the HOD}
 We match each central galaxy in our $\Delta$PA sample with its corresponding satellite group members using \citet{yang2007}. We split our groups at $\Delta$PA = 10$^{\circ}$ for the central and calculate the HOD using the background subtraction technique. Our lower split in $\Delta$PA is purely due to limitations of sample numbers. As demonstrated in \S \ref{sec:kin_mis}, this should be above the resolution limit of $\Delta$PA, however may include more galaxies with spurious kinematic misalignments or due to an internal origin. 
 
 Figure \ref{fig:hod_mpl6} shows the HOD for different magnitude cuts of the group during comparison to the photometric background. As fainter galaxies are removed, the overall magnitude of the HOD naturally decreases as we have less complete groups. As a sanity check, we compare our HODs estimated from the background subtraction technique to HODs estimated directly from clustering in SDSS DR7 with similar magnitude cuts \citep{zehavi2011}. The authors use measurements of the projected correlation function for SDSS DR7, which is translated into a HOD through use of a smoothed step function \citep[see equation 7;][]{zehavi2011}. This comparison is shown in panels II-IV (green dashed line) and matches our estimation well.
@@ -256,7 +300,7 @@ Regardless of $\Delta$PA classification, at all magnitude thresholds we find tha
     \label{fig:hod_mpl6}
 \end{figure}
 
-\section{Discussion}
+\subsection{Discussion}
 An important assumption in our motivation has been that gas accretion should originate from cold filamentary flows of the cosmic web. In reality, gas in-flowing into a central galaxy could also result from cooling of the surrounding hot halo and accreting in a more stochastic nature, so we consider that next. 
 
 As introduced in \S \ref{sec:kin_mis}, \citet{lagos2015} explore the origin of kinematic misalignment between gas and stars in ETGs using GALFORM, in comparison with the misaligned field ETG fraction found in ATLAS\textsuperscript{3D} of 42 $\pm$ 6\%  \citep{davis2011a}. They find that using solely galaxy mergers as the source for misaligned cold gas only predicts 2\% of ETGs to have $\Delta$PA > 30$^{\circ}$. Regardless of the time-scales of dynamical friction used, there are simply not enough mergers at $z=0$ to recreate the misaligned fraction observed. To include the effects of smooth gas accretion, they trace its history onto a subhalo along with incident galaxy mergers in their GALFORM model. They follow the angular momentum flips in the constituent cold gas, stars in galaxies and the corresponding dark matter halo using the Monte Carlo simulation prescription of \citet{padilla2014}. This simulation analyses the incident mass with respect to the subhalo, categorising by source (smooth accretion or merger) and constructs a PDF of the expected change in rotational direction for each component: hot halo, cold gas disc and stellar disc. \citet{padilla2014,lagos2015} consider the gas and stellar discs of galaxies to be initially aligned with the surrounding hot halo of gas from which they cooled. When a dark matter halo is accreted, the hot halo is immediately offset from the original rotation, which in time cools to create a misaligned gas disc in the galaxy. Memory of the misalignment can be erased through disc instabilities which use cold gas in the form of a starburst. It should however be noted that this model does not include the relaxation of the gas disc towards the stellar component due to torques. With this in mind any expected misalignment can only be considered an upper limit. \citet{lagos2015} reproduce consistent fractions of misalignment with ATLAS\textsuperscript{3D} by assuming that accretion does not come from a correlated preferential direction. To consider the effect of filamentary `cold mode' accretion on misalignment, the direction of accretion is then correlated on various time-scales and again the expected misaligned fraction is calculated. Assuming an uncorrelated direction of accretion marginally better reproduces observations but more importantly highlights the important role of slower `hot mode' accretion in interpretation. Stochastic accretion onto the galaxy from the hot halo may be the driving factor in misalignment of the gas disc, explaining the lack of correlation with our measures of large-scale environment and halo age. 
@@ -279,7 +323,7 @@ Mis-classification of central galaxies has implications throughout our paper. Ho
 
 Although a quantitative assessment of the effects of the group catalogue can only be made using a forward-model approach using mock catalogues we argue, based on the above, that the lack of signal reported in this chapter is more likely due to a lack of physical correlation between halo assembly history and kinematic misalignment measured up to 2.5 $R_e$.
 
-\section{Summary}
+\subsection{Summary}
 In this chapter, we considered the visibility of cosmic web accretion and hence halo assembly onto central galaxies in MaNGA. We used the difference in global position angles measured for the stellar and H$\alpha$ velocity fields to classify if a galaxy is kinematically misaligned ($\Delta$PA > 30$^{\circ}$). This chapter is summarised as follows:
 \begin{itemize}
 \item We first correlated distances to cosmic web features such as nodes and filaments to the aligned and misaligned galaxy samples. We considered the theory that low-mass haloes embedded in filaments (or in close vicinity) find their accretion `stalled' as material moves preferentially towards larger sub-haloes along the filament. This would correspond to aligned central galaxies in low-mass haloes residing closer to filamentary structures. We find that kinematic misalignment holds little or no correlation with the vicinity to nodes or filaments once the effects of morphology, stellar mass and small scale density are considered, as shown in Figure \ref{fig:mh_cw}. 
