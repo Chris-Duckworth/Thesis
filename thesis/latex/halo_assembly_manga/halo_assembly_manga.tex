@@ -30,9 +30,48 @@ In parallel with detecting spin alignment, tracing the impact of dark matter hal
 \red{talk about C. Welker and Krowleski papers.}
 
 \subsection{Data and Methods}
+
 \subsubsection{Galaxy sample}
+For each section in this chapter, we make use of galaxies from the sixth MaNGA Product Launch (MPL). MPL-6 corresponds to a total of 4633 unique galaxy observations, of which we compute kinematic position angles for both the stellar and ionized gas velocity fields. We calculate position angles as described in \S\label{sec:kin_mis}. In this section concerning spin alignment we only make use of position angles derived from stellar kinematics, however, in \S\ref{sec:halo_assembly} we make use of the full kinematic misalignment measures. 
+
+To compute the spin direction of each galaxy in our sample, we assume a thin disk approximation and therefore require each galaxy to have a disk component. We select our sample based on the visual morphological classifications of GalaxyZoo2 \citep[GZ2][]{willett2013} as introduced in \S\ref{sec:morph_def_obs}. We select a \textit{pure} spiral galaxy sample by taking all objects that have a debiased vote fraction of $\geq 0.9$ for answers positive to the galaxy having a disk. \red{add in lenticular definition}.
+
 \subsubsection{DisPerSE}
+For all work in this chapter, we characterise the topological features of the cosmic web using the Discrete Persistent Structure Extractor Code \citep{sousbie2011a, sousbie2011b} as introduced in \S\ref{sec:cosmic_web_intro}. Here DisPerSE is applied to a modified version of the SDSS DR10 spectroscopic sample as described in \citet{tempel2014}. In observations there is an additional difficulty since we are not working with exact three dimensional positions in real space, however, in redshift space. To recover the intrinsic galaxy position, an estimation for the peculiar velocity must be made for each galaxy. On large-scales this corresponds to the Kaiser effect \citep{kaiser1987}, which acts to increase the contrast of the skeleton due the coherent motion of galaxies with the growth of structure \citep[e.g.][]{shi2016}. On small-scales, however, the Fingers of God effect \citep[FOG;][]{jackson1972,tulley1978} derives from random motions of galaxies within virialized haloes. The latter can elongate structure in redshift space leading to erroneous identification of filaments. We correct for the FOG effect using the technique outlined in \citet{kraljic2018}. As introduced in \S\ref{sec:cosmic_web_intro}, the \textit{robustness} of the morphological features identified are quantified using the so called persistence ratio, a measure of the significance of the topological connection between individual pairs of critical points. Here we use filaments identified with a significance of 5$\sigma$ corresponding to reasonably robust structure.
+
+The local geometry of each filament is characterised by a series of smaller \textit{segments}, which are the default output of the DisPerSE code. For each galaxy, the nearest segment is found and its direction is used to compare to the given galaxy's spin direction.
+\red{find out maximum distance at which a galaxy is considered to be connected with a filament in Kat's sample.}
+
 \subsubsection{Angular momentum directions}
+In order to estimate the spin direction of our galaxy sample, we assume a thin-disk approximation according to \citet{LeeErdogdu2007}. Here we summarise the key steps in calculating the three dimensional vector. 
+
+Working in spherical coordinates in the reference frame of the galaxy, the spin direction can be described as
+\begin{equation}
+\begin{split}
+\mathrm{\hat{L}_r & = \cos i,} \\
+\mathrm{\hat{L}_{\theta} & = (1 - \cos^2 i)^{1/2} \sin PA,} \\
+\mathrm{\hat{L}_{\phi} & = (1 - \cos^2 i)^{1/2} \cos PA,}
+\end{split}    
+\end{equation}
+where $\mathrm{PA}$ is the position angle from the stellar kinematics and $i$ is the inclination of the galaxy, defined as such
+\begin{equation}
+\mathrm{\cos^2 i = \frac{(b/a)^2 - p^2}{1 - p^2},}
+\end{equation}
+where $b/a$ is the sky projected axis ratio and $p$ is the intrinsic flatness of the galaxy \citep[varies as a function of morphology as described in][]{haynes1984}. $p$ accounts for the fact that the disk of galaxies has a finite thickness, and the presence of a bulge impacts the estimation of $b/a$. In this work we adopt an intermediate value (0.158), however choosing more extreme proposed values (0.1 - 0.23) does not change our findings. The value of $i$ is set to $\pi/2$ if $b/a < p$.
+
+The spin direction can then be transformed into equatorial Cartesian coordinates as follows:
+\begin{equation}
+\begin{split}
+    \hat{L}_x & = \hat{L}_r \sin \alpha \cos \beta + \hat{L}_{\theta} \cos \alpha \cos \beta - \hat{L}_{\phi} \sin \beta \\
+    \hat{L}_y & = \hat{L}_r \sin \alpha \sin \beta + \hat{L}_{\theta} \cos \alpha \sin \beta + \hat{L}_{\phi} \cos \beta \\
+    \hat{L}_z & = \hat{L}_r \cos \alpha - \hat{L}_{\theta} \sin \alpha
+\end{split}    
+\end{equation}
+where $\alpha = \pi/2 - {\rm dec}$ and $\beta = {\rm RA}$.
+
+% %We apply positive sign to $\hat{L}_r$ to all galaxies 
+% %It is worth mentioning here that the spin vector determined from equation (9) suffers from the sign ambiguity in Lr, as mentioned in Pen et al. (2000) and Trujillo et al. (2006). Since it is not possible to determine the sign of Lr from the given information of the Tully Catalog, we apply positive sign to all Tully galaxies here. We expect that this sign ambiguity will play a role in decreasing the strength of the spin-shear alignment signal.
+% \Kat{Talk about the ambiguity in the sign of $\hat{L}_r$ and the adopted positive value. Maybe we could do better, Chris I think you should have an information on whether it is positive of negative, no?}
 
 \subsection{Spin alignment}
 \subsubsection{LTGs}
