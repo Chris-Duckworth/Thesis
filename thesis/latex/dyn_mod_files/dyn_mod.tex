@@ -9,20 +9,32 @@
 %\epigraph{Eat slugs malfoy.}
 
 \section{Introduction}
-Numerical simulations show that the anisotropy of the cosmic web imprints distinct signatures in the orbits of particles within dark matter haloes, leading to distinct differences in velocity anisotropy (ratio between velocity moments in tangential and radial directions). On a particle level, the orbits have greater tangential dispersion in haloes within environments of both higher tidal field strength and over- density \citep[e.g.][]{faltenbacher2010, shi2015}. Satellite galaxies also have been shown to trace this anisotropy with orbits becoming more tangentially biased for haloes in closer vicinity to large filamentary structure \citep[][]{garaldi2018}. Observing said velocity anisotropy is tricky in observations without 3D motions.
+In the framework of the cosmic web, matter flows preferentially from under-dense to over-dense regions under the influence of the gravitational potential of the cosmic web. In Figure \ref{fig:disperse_matter_path}, we show a diagram of the flow of matter of the cosmic web, using morphological features identified by DisPerSE in IllustrisTNG300. As large-scale structure grows, material is sucked out of voids from the walls that in-case them. These walls are framed by filaments, so that matter travels along walls into the filaments, perpendicular to the filament's major axis. Once in the reference frame of the filament, material moves along its major axis, towards maxima (nodes; galaxy groups or clusters). Numerical simulations show that the natural anisotropy of the cosmic web imprints distinct signatures in the orbits of material accreting onto dark matter haloes. Haloes forming at these intersections (saddle) points should experience large degrees of anisotropy since matter is collapsing perpendicular to the filament from the walls but is moving to more dense regimes (nodes) along the direction of the filament itself \citep[e.g.][for galaxy properties in saddle environments]{kraljic2019saddle}. Outside the immediate influence of the cosmic web, lower mass dark matter halos should be able to continue to form matter more isotropically. The decrease in the tidal field strength enables the halos to continue accreting material from smaller scale filamentary structure, leading to more radial orbits.
 
-In this chapter, we demonstrate the relationship between large scale environment and the typical orbits of satellite galaxies in low mass dark matter haloes. Using the cosmological simulation of IllustrisTNG300, we stack low mass haloes in different cosmic web environments (voids, saddle points, and filaments) to recover the difference in velocity anisotropy. We motivate the potential to recover the 3D motions of satellites through a new application of the axisymmetric Jeans equations, and hence, the velocity anisotropy of the environment they trace.
+\begin{figure*}
+    \centering
+	\includegraphics[width=0.5\linewidth]{thesis/latex/dyn_mod_files/disperse_matter_path.pdf}
+    \caption{Representation of the flow of matter in large-scale structure. The empty green circles show the galaxy distribution in a slice of IllustrisTNG300 from which DisPerSE has been applied to. Identified nodes (blue squares), saddle points (green stars) and minima (red circles) are shown with filaments (black lines). The yellow arrows show the flow of matter to hierarchically higher mass environments. Mass is sucked out of voids which are funnelled into filaments through walls. Once within filaments, matter moves preferentially along the plane of the filament to the most over-dense regimes: nodes (galaxy groups or clusters). This flow of material inwards (perpendicular) and outwards (parallel) to a given point in the plane of the filament, creates the anisotropy we see in orbits of dark matter; \textit{especially} in saddle points.}
+    \label{fig:disperse_matter_path}
+\end{figure*}
 
-\section{Data}
-\subsection{IllustrisTNG300}
+In numerical simulations, the degree of perturbation from pure isotropic radial accretion is quantified by velocity anisotropy (ratio between velocity moments in tangential and radial directions). This is typically calculated by considering the total population of dark matter particles associated with the halo. On this basis, the orbits have greater tangential dispersion in haloes within environments of both higher tidal field strength and over-density \citep[e.g.][]{faltenbacher2010, shi2015}. Tidal field strength is innately related to the cosmic web, however, making a direct link to how this is modulated by filamentary structure and saddle points individually is difficult. 
 
-\subsection{Galaxy sample} \label{sec:gal_samp}
+Baryonic matter is also subject to the gravitational potential of the cosmic web, and, to first order, should trace the same orbits as seen in the dark matter. \citep[][]{garaldi2018} demonstrate this through considering the orbits of all satellite galaxies (albeit including those below the typical mass observable in redshift surveys) within milky way sized haloes. Satellites in those haloes embedded in (or in close vicinity to) large filamentary structure, display distinctly more anisotropic orbits, than those in isolated haloes. Being able to trace the anisotropy though satellite galaxies is promising for observations, however, recovering 3D motions for galaxies is extremely difficult.
+
+In this chapter, we aim to trace the flow of dark matter near different morphological features of the cosmic web, through using satellite galaxies as tracers. In particular, we are interested in the impact of large scale structure on low mass dark matter haloes ($\mathrm{M_{DM} \sim 10^{12}M_{\odot}}$), whose evolution is modulated most strongly by large scale tidal fields, and hence, most likely to trace the anistropy of the cosmic web \citep[e.g.][]{tojeiro2017}. This brings an additional difficulty, as these low mass haloes will host low numbers of satellite galaxies. Using the cosmological simulation of IllustrisTNG300, we stack low mass haloes in different cosmic web environments (voids, saddle points, and filaments) to recover the difference in velocity anisotropy. To consider the dynamics within each environment we require $\sim$1000 so we stack in consistent regimes while maintaining orientation and scaling characteristic group lengths. We use this study to motivate the potential to recover the 3D motions of satellites in observations through a new application of the axisymmetric Jeans equations, and hence, the velocity anisotropy of the environment they trace. In section \S\ref{sec:dyn_mod_aniso}, we introduce the data, methodology, and results associated with using satellites galaxies as tracers in different cosmic web environments in IllustrisTNG. In section \S\ref{sec:jam}, we introduce the basics and methodology of discrete dynamical modelling, and highlight the potential for it to be used to recover 3D satellite galaxy dynamics in observations. We also present a re-derivation of the axis-symmetric jeans equations to include gravitational collapse, and removing the steady state assumption. Finally we summarise our findings and conclude in \S\ref{sec:dyn_mod_conclusions}.
+
+\section{Anisotropy in the cosmic web} \label{sec:dyn_mod_aniso}
+\subsection{Data}
+\subsubsection{IllustrisTNG300}
+
+\subsubsection{Galaxy sample} \label{sec:gal_samp}
 %Structure in TNG is identified into haloes and subhaloes as follows. Haloes (also referred to as FoF haloes or Groups) are found from a standard friends-of-friends (FoF) algorithm \citep{davis85} with linking length b=0.2. The FoF algorithm is run on the dark matter particles, and the other types (gas, stars, BHs) are attached to the same groups as their nearest DM particle. Each halo is then divided into gravitationally bound subhaloes through the subfind algorithm \citep{springel01}.
 To select galaxies in TNG300, we consider all subhaloes at $z=0$ (snapshot 99) containing a minimum stellar mass of $\mathrm{M_{\ast} = 10^{8} M_{\odot}}$ within a 3D aperture of 30 comoving kpc from the subhalo centre \citep[as defined in;][]{pillepich18b}. This corresponds to 564 930 unique galaxies whose positions are used to reconstruct the cosmic web as described in \S\ref{sec:disperse}.
 
 In the context of halo assembly, we are interested in isolating the effects of anisotropy of the cosmic web on low mass dark matter haloes. To this effect, we select all subhaloes that reside in a FoF halo of mass $\mathrm{10^{11.5} M_{\odot} < M_{h} < 10^{12.5} M_{\odot}}$ for use in stacking environments, described in \S\ref{sec:stacking}.
 
-\subsection{DisPerSE}
+\subsubsection{DisPerSE}
 
 \begin{figure*}
 	\includegraphics[width=\linewidth]{dyn_mod_files/TNG300-1-SM10-8-slice-galaxy-density-skeleton-comparison.png}
@@ -31,7 +43,7 @@ In the context of halo assembly, we are interested in isolating the effects of a
 \end{figure*}
 
 
-\subsection{Cosmic web distances}
+\subsubsection{Cosmic web distances}
 \red{COPY AND PASTE FROM DUCKWORTH+19}
 Having constructed a skeleton of the cosmic web, a galaxy's environment can be described by finding its vicinity to various features of the skeleton. The cosmic web comprises of low density `void' regions which are enclosed by `walls' of structure which become filaments at points of intersection. The gravitational potential of the filaments dictate the flow of the matter, which at the point of intersection, feed high density regions interpreted as `nodes'. Along the filament, saddle points remain as minima between the flows towards nodes. Saddle points are subdivided into 2-saddles and 1-saddles corresponding to the dimensionality of collapse. We take 2-saddles as our environment of interest corresponding to one dimension of recession along the filament, while accretion continues in any direction perpendicular. 
 
@@ -93,3 +105,52 @@ where $v_{t}(r)$ and $v_{r}(r)$ denote the radial and tangential velocities. The
 In the left panel of Figure \ref{fig:beta_stack}, we show $\beta_{sat}$ again calculated directly from the satellite tracers in our void (red, dotted), filament (black, dot-dashed) and 2-saddle (green, solid) stacks. We again see a clear distinction between environments in the anisotropy with 2-saddles exhibiting orbits with stronger tangential velocity components at larger radii. The gray box inlaid shows $\overline{\beta_{sat}}$ found from all satellites within the stacks. In-keeping with \citet{ZOMGiii}, we find that the satellite anisotropy becomes more tangentially biased as we more closer to large filamentary structure.
 
 It should be noted that while it is important to retain directionality in stacking for the purpose of dynamical modelling, it has no impact on the direct measures of $\beta_{\sigma}$ and $\beta_{sat}$.
+
+\section{Potential applications of discrete dynamical models} \label{sec:jam}
+
+
+\subsection{Generalised Jeans equations in cylindrical coordinates}
+In standard cylindrical coordinates (R,z,$\phi$) under the assumption of axial symmetry (so that; $\partial \Phi / \partial \phi = \partial f / \partial \phi = 0$) we find the collisionless Boltzmann equation to be (cf. BT equation [4-17]): 
+\begin{equation} \label{eq:CBE}
+\frac{\partial f}{\partial t} + v_R \frac{\partial f}{\partial R} + v_z \frac{\partial f}{\partial z} + \left[\frac{v_{\phi}^2}{R} - \frac{\partial \Phi}{\partial R}\right] \frac{\partial f}{\partial v_R} - \frac{v_R v_{\phi}}{R} \frac{\partial f}{\partial v_{\phi}} - \frac{\partial \Phi}{\partial z} \frac{\partial f}{\partial V_z} = 0.
+\end{equation}
+
+Without making the usual assumptions of steady state, we multiply equation \ref{eq:CBE} by $v_{R}$ and $v_z$ respectively and integrate over all velocities to obtain (Jeans 1922, BT equation [4-29a,c])
+\begin{align} \label{eq:j_vr}
+\frac{\partial (\nu \overline{v_R})}{\partial t} + \frac{\partial (\nu \overline{v_R^2})}{\partial R} + \frac{\partial (\nu \overline{v_R v_z})}{\partial z} + \nu \left[ \frac{\overline{v_R^2} - \overline{v_{\phi}^2}}{R} + \frac{\partial \Phi}{\partial R}\right] &= 0\\ \label{eq:j_vz}
+\frac{\partial (\nu \overline{v_z})}{\partial t} + \frac{\partial (\nu \overline{v_R v_z})}{\partial R} + \frac{\partial (\nu \overline{v_z^2})}{\partial z} + \nu \frac{\overline{v_R v_z}}{R} + \nu \frac{\partial \Phi}{\partial z}&= 0.
+\end{align}
+where we use the following notation
+\begin{align}
+\nu &\equiv \int f d^3 v \\
+\nu \overline{v_k v_j} &\equiv \int v_k v_j f d^3 v .
+\end{align}
+Similarly we can derive the continuity equation in cylindrical coordinates by integrating \ref{eq:CBE} over all velocities (cf. BT [4-28] 
+\begin{equation} \label{eq:contin}
+\frac{\partial \nu}{\partial t} + \frac{1}{R}\frac{\partial (R \nu \overline{v_R})}{\partial R} + \frac{\partial (\nu \overline{v_z})}{\partial z} = 0.
+\end{equation}
+We wish to now go beyond the assumption of steady state and allow net radial motion due to the infall and collapse of dark matter haloes (i.e. $\overline{v_r} \neq 0$, $\overline{v_z} \neq 0$). The second order velocity moments therefore can be written as:
+\begin{align} \label{eq:vr}
+\overline{v_R^2} &= \sigma_R^2 + \overline{v_R}^2 \\ \label{eq:vz}
+\overline{v_z^2} &= \sigma_z^2 + \overline{v_z}^2
+\end{align}
+We can now make use of the continuity equation \ref{eq:contin} and rewrite the first term in \ref{eq:j_vr};
+\begin{align}
+\frac{\partial ( \nu \overline{v_R})}{\partial t} &= \nu \frac{\partial \overline{v_R}}{\partial t} + \overline{v_R} \frac{\partial \nu}{\partial t} \\
+&= \nu \frac{\partial \overline{v_R}}{\partial t} - \overline{v_R}\frac{\partial (\nu \overline{v_z})}{\partial z} - \frac{\nu}{R}\overline{v_R}^2 - \overline{v_R} \frac{\partial (\nu \overline{v_R})}{\partial R}.
+\end{align}
+We can also rewrite the second term in equation \ref{eq:j_vr} through use of equation \ref{eq:vr} and the product rule; 
+\begin{align}
+\frac{\partial ( \nu \overline{v_R^2})}{\partial R} &= \frac{\partial (\nu \sigma^2_R)}{\partial R} + \frac{\partial ( \nu \overline{v_R}^2)}{\partial R} \\
+&= \frac{\partial (\nu \sigma^2_R)}{\partial R} +  \overline{v_R}\frac{\partial (\nu \overline{v_R})}{\partial R} + \nu \overline{v_R} \frac{\partial \overline{v_R}}{\partial R}.
+\end{align}
+Re-introducing these terms and using a similar method for the $v_z$ moment, the Jeans equations (\ref{eq:j_vr},\ref{eq:j_vz}) can be rewritten as
+\begin{multline}
+\nu \left[\overline{v_R}\frac{\partial \overline{v_R}}{\partial R} + \frac{\partial \overline{v_R}}{\partial t} \right] - \overline{v_R} \frac{\partial (\nu \overline{v_z})}{\partial z} + \frac{\partial (\nu \sigma_R^2)}{\partial R} + \frac{\partial (\nu \overline{v_R v_z})}{\partial z} + \nu \left[ \frac{\sigma_R^2 - \overline{v_{\phi}^2}}{R} + \frac{\partial \Phi}{\partial R}\right] = 0
+\end{multline}
+\begin{multline}
+\nu \left[\overline{v_z}\frac{\partial \overline{v_z}}{\partial z} + \frac{\partial \overline{v_z}}{\partial t} \right] - \overline{v_z} \frac{\partial (\nu \overline{v_R})}{\partial R} + \frac{\partial (\nu \sigma_z^2)}{\partial z} + \frac{\nu \sigma_{Rz}^2}{R} + \nu \frac{\partial \Phi}{\partial z} = 0 
+\end{multline}
+where we have used that $\overline{v_z v_R} = \sigma_{Rz}^2 + \overline{v_R} \ \overline{v_z}$. These reduce to the usual form of the Jeans equations under the steady state assumption but due to this inclusion of non-equilibrium, we find three additional terms in both relating to the mean radial motion of galaxies in both the $z$ and $R$ directions.
+
+\section{Summary and Conclusions} \label{sec:dyn_mod_conclusions}
