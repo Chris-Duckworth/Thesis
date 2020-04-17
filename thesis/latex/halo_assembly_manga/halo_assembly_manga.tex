@@ -48,7 +48,7 @@ For all work in this chapter, we characterise the topological features of the co
 
 The local geometry of each filament is characterised by a series of smaller \textit{segments}, which are the default output of the DisPerSE code. For each galaxy, the nearest segment is found and its direction is used to compare to the given galaxy's spin direction. 
 
-\subsubsection{Cosmic web distances}
+\subsubsection{Cosmic web distances} \label{sec:cosmic_web_distances}
 Having constructed a skeleton of the cosmic web, a galaxy's environment can be described by finding its vicinity to various features of the skeleton. The cosmic web comprises of low density `void' regions which are enclosed by `walls' of structure which become filaments at points of intersection. The gravitational potential of the filaments dictate the flow of the matter, which at the point of intersection, feed high density regions interpreted as `nodes'. Along the filament, saddle points remain as minima between the flows towards nodes.  
 
 The distance to the nearest filamentary point, $D_{skel}$, is first found for each galaxy. To then consider the influence of the nearest node, the distance from this impact point along the filament to the node is also computed, $D_{node}$. Finally the distance to the nearest wall, $D_{wall}$, can then be found. In order to investigate expected trends of galaxies with vicinity to any cosmic web feature we must remove effects resulting due to the proximity of others. For $D_{skel}$ we remove all galaxies that lie within $D_{node} < 0.5$ Mpc. 
