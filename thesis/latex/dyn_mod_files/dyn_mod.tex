@@ -69,7 +69,7 @@ In addition to the distribution of satellites, we also require an assumed dark m
 
 A natural assumption of the axis-symmetric Jeans equations is symmetry around the principal axis of rotation, and hence, it is important to retain directionality while stacking tracers (galaxies) and potentials. In the instance of saddle points and filaments, we use the direction of the nearest filament segment (from saddle to node) to stack galaxy positions/velocities and the gravitational potential around. For those stacked far away from large scale structure (i.e. voids), we use the direction of the overall angular momentum vector of the dark matter in the central subhalo.
 
-\subsection{Velocity anisotropy}
+\subsection{Velocity anisotropy} \label{sec:velocity_anisotropy}
 \subsubsection{Results}
 For each environment stack, we first directly compute the anisotropy from the three-dimensional motions of the satellite galaxies. We define two measures of anisotropy, based on the radial and tangential velocity moments. Following \citet{faltenbacher2010}, we refer to the \textit{velocity anisotropy parameter} as such;
 \begin{equation} \label{eq:vel_ani_sigma}
@@ -96,14 +96,79 @@ To interpret our findings, we now place these results in the context of previous
 
 A possible explanation for more highly clustered haloes exhibiting a relatively larger tangential velocity dispersion is that the impact parameters of the merging sub-haloes are larger due to far more gravitational interactions a short time before accretion. This would lead to a greater dispersion of tangential velocities corresponding to a lower velocity anisotropy. On the other hand, in less clustered regions the gravitational field is dominated by the halo itself naturally leading to more radial in-fall. 
 
-Further, velocity anisotropy has also been decomposed as a function of tidal environment. \cite{shi2015} investigate how halo dynamical properties are related to their formation histories and hence the tidal environment in which they reside. They demonstrate a clear correlation between $\beta_{\sigma}$ and the first eigenvalue of the tidal tensor (i.e. tidal field strength) for both low mass and high mass haloes. As tidal field strength increases, $\beta_{\sigma}$ decreases, showing that again there is a greater dispersion in tangential orbits. 
+Velocity anisotropy has also been decomposed as a function of tidal environment. \cite{shi2015} investigate how halo dynamical properties are related to their formation histories and hence the tidal environment in which they reside. Figure \ref{fig:shifig11}, shows the relationship of $\beta_{\sigma}$ of particles in central `host' haloes and the tidal field strength in which these haloes reside. In both mass bins there is a clear correlation between $\beta_{\sigma}$ and the first eigenvalue of the tidal tensor (i.e. tidal field strength). As tidal field strength increases, $\beta_{\sigma}$ decreases, showing that again there is a greater dispersion in tangential orbits. 
+\begin{figure}
+\begin{center}
+	\includegraphics[width=0.5\linewidth]{thesis/latex/dyn_mod_files/shi2015fig11.jpg}
+    \caption{Correlation between velocity anisotropy defined by equation \ref{eq:vel_ani_sigma} of host haloes and the first eigenvalue for the tidal field estimator. This plot is shows that as tidal field strength increases, $beta_{\sigma}$ decreases indicating more dispersion in tangential orbits.}
+    \label{fig:shifig11}
+\end{center}
+\end{figure}
 
-The orbits of satellite subhaloes in the context of the cosmic web has been previously considered in a set of zoom N-body and hydrodynamical simulations \citep{ZOMGiii}. They follow seven galaxy sized haloes ($M_{h} \sim 10^{11} M_{\odot}$) which are classified as `stalled' or accreting corresponding to the time at which their final mass becomes stable. The accreting haloes correspond with \green{voids?} nodes of the cosmic web and are fed isotropically by radial infall of matter along filaments. Conversely `stalled' haloes are embedded in prominent filaments of the large-scale structure. They find that the satellite anisotropy parameter at $z = 0$ is positive for accreting haloes and negative for stalled haloes showing that orbits become more tangentially biased (both in magnitude and dispersion) when low mass haloes are closer to large filamentary structure. 
+Extending this argument to include the impact of the cosmic web, the ZOMG (Zooming in On a Mob of Galaxies) paper series \cite{ZOMGI,ZOMGII,ZOMGiii}, present a set of zoom N-body and hydrodynamical simulations. They follow seven galaxy sized haloes selected on a definition of collapse time which generates strong assembly bias. These haloes are classified as `stalled' or accreting corresponding to the time at which their final mass becomes stable. Stalled haloes correspond to haloes which have become stable at $z \sim 1.5$ whereas accreting haloes are still yet to reach this point. 
+The accreting haloes correspond with nodes of the cosmic web and are fed isotropically by radial infall of matter along thin filaments. Conversely `stalled' haloes are embedded in prominent filaments of the large-scale structure. Matter recedes along the filament to starve the early-forming halo as infall only becomes possible from the perpendicular directions. Overall this inflow is balanced by the outflow along the filament leading to no net mass growth. In this instance they follow the orbits on a satellite level rather than particle level. They find that the satellite anisotropy parameter at $z = 0$ is positive for accreting haloes and negative for stalled haloes showing that orbits become more tangentially biased (both in magnitude and dispersion) when low mass haloes are closer to large filamentary structure. Stalled haloes are also found to have a smaller fraction of their mass in sub-structure with respect to the accreting haloes. This can be see as a natural result of a more vibrant recent-accretion history for the later forming haloes. 
 
 Our results are consistent with the idea of tidal forces acting to `stall' accretion leading to more tangentially biased orbits in the outskirts of haloes within filamentary structure. This effect is maximised in close vicinity to saddle points, due to the distinct anisotropy of material flowing in-wards perpendicular to the filament, and once accreted, preferentially along the filament. We show that satellite galaxies \textit{can} be used to trace the orbits within dark matter haloes, and distinct differences can be found between cosmic web environments. In the next section, we introduce the concept of discrete dynamical modelling in the context of the axis-symmetric Jeans equations, and consider the feasibility of applying them to observations, in order to recover their 3D motions, and hence velocity anisotropy.
 
 \section{Potential applications of discrete dynamical models} \label{sec:jam}
-\subsection{Generalised Jeans equations in cylindrical coordinates}
+Historically, the Jeans equations have served as a powerful tool to convert the observed projected luminosity distribution and kinematics of galaxies (or clusters of stars), to understand the underlying gravitational potential or the 3D de-projected kinematics. Under a series of assumptions, the Jeans equations enable best fitting models to understand further properties about the modelled system. In this section, we briefly introduce the Jeans equations under the assumption of axis-symmetry (\S\ref{sec:jeans_intro}), before re-deriving the equations removing the steady state assumption (\S\ref{sec:jeans_rederivation}). In \S\ref{sec:discrete_dynamical_models} we introduce the concept of dynamical models and motivate the usage in the context of satellite orbits, before summarising and concluding in \S\ref{sec:dyn_mod_conclusions}. 
+
+\subsection{Introduction to the Jeans equations} \label{sec:jeans_intro}
+The narrative in this section follows that of \citet{cappellari2008}, with additional explanation and context where necessary. The phase space distribution of positions ($x_{i}$) and velocities ($v_{i}$) for a set $i$ of tracers (such as stars, IFU spaxels or potentially satellite galaxies) within a massive system (such as a stellar cluster, galaxy or dark matter halo) can be characterised by the distribution function (DF): $f(x,v)$. If make the assumption that the system is in a \textit{steady state} (i.e. $\frac{\partial}{\partial t} = 0$: the system is not collapsing over time) and the underlying gravitational potential ($\Phi$) that the tracers are subject to is smooth, then the DF \textit{must} satisfy the steady-state collisionless Boltzmann equation:
+\begin{equation}
+\sum^{3}_{i=1}\left(v_{i}\frac{\partial f}{\partial x_i} - \frac{\partial \Phi}{\partial x_{i}}\frac{\partial f}{\partial v_{i}} \right) = 0.
+\end{equation}
+Since $f$ is a function of 6 variables, there are quite a lot (infinite) of solutions to this equation, so to make use of this in a practical sense, we must make various assumptions. One method is to only consider the velocity moments of the DF; i.e. develop Jeans equations. 
+
+\subsubsection{Some assumptions}
+The first step in simplifying the solutions is to make use of the natural symmetry of the system. Common assumptions include spheroidal or axial symmetry, since dark matter haloes are often flattened (\red{reference?}), here we make use of the Jeans equations under the assumption of axis-symmetry. We can make our lives easier by transforming to cylindrical polar coordinates $(R,z,\phi)$. In the context of our stacked environments, this corresponds to the radial distance along the axis of stacking ($z$, i.e. direction of nearest filament or rotational axis), the radial distance perpendicular to this ($R$) and the rotation direction around z ($\phi$). The assumption of axial symmetry, allows to us to state that $(\frac{\partial \Phi}{\partial \phi} = \frac{\partial f}{\partial \phi} = 0)$, i.e. symmetric luminous component and potential around the z-axis. The collionless Boltzmann equation (cf. BT equation 4-17) then becomes
+\begin{equation}
+v_{R}\frac{\partial f}{\partial R} + v_{z}\frac{\partial f}{\partial z} + \left(\frac{v_{\phi}^2}{R} - \frac{\partial \Phi}{\partial R}\right)\frac{\partial f}{\partial v_{R}} -\frac{\partial \Phi}{\partial z}\frac{\partial f}{\partial v_z} - \frac{v_R v_{\phi}}{R}\frac{\partial f}{\partial v_{\phi}} = 0.
+\end{equation}
+
+To convert this into something solvable, this equation is multiplied by $v_R$ and $v_z$ respectively and integrated over all velocities to obtain the two Jeans equations \citep[][; BT equation 4-29a,c]{jeans1922}
+\begin{eqnarray}
+\frac{\nu \overline{v_{R}^{2}} - \nu \overline{v_{\phi}^{2}}}{R} + \frac{\partial (\nu \overline{v^{2}_{R}})}{\partial R} + \frac{\nu \overline{v_{R} v_{z}}}{\partial z} = - \nu \frac{\partial \Phi}{\partial R} \\
+\frac{\nu \overline{v_{R}v_{z}}}{R} + \frac{\partial (\nu \overline{v^{2}_{z}})}{\partial z} + \frac{\nu \overline{v_{R} v_{z}}}{\partial R} = - \nu \frac{\partial \Phi}{\partial z}
+\end{eqnarray}
+where $\nu$ is the observed luminosity density distribution for the system so that
+\begin{equation}
+\nu \overline{v_{k}v_{j}} \equiv \int v_{k} v_{j} f d^{3}v.
+\end{equation}
+We have simplified things by assuming axisymmetry for the steady-state Boltzmann equation but we are not there yet. These equations don't require the potential to be generated by the luminosity density (self-consistency) and they make no assumptions about the form of the DF. Even in a world where we know the potential $\Phi$ (or can make a guess using the surface luminosity and a mass-light ratio) we are left with 2 equations and four unknowns: $\overline{v_{R}^{2}}$,$\overline{v_{z}^{2}}$,$\overline{v_{\phi}^{2}}$ and $\overline{v_{R}v_{z}}$ - i.e. we still can't define a unique solution. 
+
+\subsubsection{Some more assumptions}
+The level of velocity dispersion in each dimension of the cylindrical polar coordinate system is quantified by the \textit{velocity ellipsoid}. Dispersion in the $R$ and $z$ planes are fairly intuitive, whereas dispersion in the $\phi$ direction corresponds to orbits moving away from ordered rotation. Since we are discussing an axisymmetric system $(\frac{\partial }{\partial \phi} = 0)$, it makes sense to consider the anisotropy of the velocity ellipse in the R and z directions. In the context of galactic systems, the (R,z) plane is referred to as the meridional plane, terminology that we continue to adopt here.
+
+Mathematically speaking the velocity ellipsoid is defined at every point in the system by the three principal axes arising from the diagonalisation of the dispersion tensor so that
+\begin{equation}
+\sigma_{ij}^{2} = \overline{v_i v_j} - \overline{v_i v_j} = \frac{1}{\nu} \int (v_i - \overline{v_i})(v_j - \overline{v_j}) f d^3 v.
+\end{equation}
+To try and visualise this we can draw the distribution of velocities: $v_R$ and $v_z$ for each position in the meridional plane. For example, if we were to do this for a galaxy bulge the shape of this (velocity ellipsoid projection) would be spherical, whereas if it was considered in the disk plane it would be an ellipse flattened in the z-direction. 
+
+Our discussion so far has made one key simplifying assumption about the velocity ellipse; it's principal axes are aligned with our coordinate system i.e $\overline{v_R v_z} = 0$. Physically this means that velocities in the R and z directions are not correlated and hence our velocity ellipsoids are not tilted in the meridional plane. For galactic systems, this is a poor assumption going above the thin-disk plane since many orbits in the Milky way trail towards the centre. Still, we can live with this poor assumption since the majority of the orbits lie in the thin disk or the spheroidal bulge. \red{discuss how this is relevant for satellite galaxies.}
+
+After assuming our velocity ellipsoids are not tilted in the meridional plane, we now make a further assumption that their axis ratio is fixed and defined by:
+\begin{equation} \label{beta_z}
+\beta_z = 1 - \frac{\overline{v_{z}^2}}{\overline{v_{R}^2}}.
+\end{equation}
+Again using a galaxy as an example, a bulge would have $\beta_z \approx 0$ since $\overline{v_z^2} \approx \overline{v_R^2}$, whereas a disk would have $\beta_z \approx 0.5$ since $\overline{v_z^2} < \overline{v_R^2}$. In principal we can allow $\beta_z$ to vary as function of R, since it can be defined for each MGE component (see next section). In reality we want to minimise free parameters and either set it to a mean value for the whole system or a subset of tracers (e.g. for each of bulge and disk stars). 
+
+Mathematically speaking, defining our system to be axisymmetric implies that $\overline{v_{R}} = \overline{v_{z}} = 0$. Therefore the dispersions in these directions are simple: $\sigma_{z}^2 = \overline{v_z}^2$ and $\sigma_{R}^2 = \overline{v_R}^2$. Quantifying $\sigma_{\phi}$ is trickier since we need to find the average rotation, leading to the definition of the rotation parameter $\kappa$ \red{reference to somewhere}. 
+
+Implementing these assumptions (where $\beta_z = 1/b$) and using the boundary condition that $\nu \overline{v_z^2} = 0$ as $z \to \infty$, we can define our Jeans equations to reproduce the second velocity moments in $z$ and $\phi$:
+\begin{eqnarray} \label{jeans1}
+\nu \overline{v_z^2}(R,z) = \int^{\infty}_{z} \nu \frac{\partial \Phi}{\partial z} dz \\
+\nu \overline{v_{\phi}^2}(R,z) = b \left[ R \frac{\partial (\nu \overline{v_z^2})}{\partial R} + \nu v_{z}^2\right] + R\nu \frac{\partial \Phi}{\partial R} . \label{jeans2}
+\end{eqnarray}
+One final caveat regarding the implementation of the Jeans equations in this way, is that the solution satisfying these may not correspond to a physical (positive) DF. To assess the validity of the solutions for a given system model we can compare these predicted moments with the observed distributions for our tracers. However to do so we need to parametrise both the form of the potential $\Phi$ and the luminous surface density $\nu$.
+
+\red{add MGE discussion?}
+\red{add discrete section?}
+\subsection{Discrete dynamical models}
+
+\subsection{Generalised Jeans equations in cylindrical coordinates} \label{sec:jeans_rederivation}
+\red{Where to put this?}
 In standard cylindrical coordinates (R,z,$\phi$) under the assumption of axial symmetry (so that; $\partial \Phi / \partial \phi = \partial f / \partial \phi = 0$) we find the collisionless Boltzmann equation to be (cf. BT equation [4-17]): 
 \begin{equation} \label{eq:CBE}
 \frac{\partial f}{\partial t} + v_R \frac{\partial f}{\partial R} + v_z \frac{\partial f}{\partial z} + \left[\frac{v_{\phi}^2}{R} - \frac{\partial \Phi}{\partial R}\right] \frac{\partial f}{\partial v_R} - \frac{v_R v_{\phi}}{R} \frac{\partial f}{\partial v_{\phi}} - \frac{\partial \Phi}{\partial z} \frac{\partial f}{\partial V_z} = 0.
@@ -146,5 +211,7 @@ Re-introducing these terms and using a similar method for the $v_z$ moment, the 
 \nu \left[\overline{v_z}\frac{\partial \overline{v_z}}{\partial z} + \frac{\partial \overline{v_z}}{\partial t} \right] - \overline{v_z} \frac{\partial (\nu \overline{v_R})}{\partial R} + \frac{\partial (\nu \sigma_z^2)}{\partial z} + \frac{\nu \sigma_{Rz}^2}{R} + \nu \frac{\partial \Phi}{\partial z} = 0 
 \end{multline}
 where we have used that $\overline{v_z v_R} = \sigma_{Rz}^2 + \overline{v_R} \ \overline{v_z}$. These reduce to the usual form of the Jeans equations under the steady state assumption but due to this inclusion of non-equilibrium, we find three additional terms in both relating to the mean radial motion of galaxies in both the $z$ and $R$ directions.
+
+\subsection{Discrete dynamical models} \label{sec:discrete_dynamical_models}
 
 \section{Summary and Conclusions} \label{sec:dyn_mod_conclusions}
