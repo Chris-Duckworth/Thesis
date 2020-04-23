@@ -114,7 +114,7 @@ Our results are consistent with the idea of tidal forces acting to `stall' accre
 Historically, the Jeans equations have served as a powerful tool to convert the observed projected luminosity distribution and kinematics of galaxies (or clusters of stars), to understand the underlying gravitational potential or the 3D de-projected kinematics. Under a series of assumptions, the Jeans equations enable best fitting models to understand further properties about the modelled system. In this section, we briefly introduce the Jeans equations under the assumption of axis-symmetry (\S\ref{sec:jeans_intro}), before re-deriving the equations removing the steady state assumption (\S\ref{sec:jeans_rederivation}). In \S\ref{sec:discrete_dynamical_models} we introduce the concept of dynamical models and motivate the usage in the context of satellite orbits, before summarising and concluding in \S\ref{sec:dyn_mod_conclusions}. 
 
 \subsection{Introduction to the Jeans equations} \label{sec:jeans_intro}
-The narrative in this section follows that of \citet{cappellari2008}, with additional explanation and context where necessary. The phase space distribution of positions ($x_{i}$) and velocities ($v_{i}$) for a set $i$ of tracers (such as stars, IFU spaxels or potentially satellite galaxies) within a massive system (such as a stellar cluster, galaxy or dark matter halo) can be characterised by the distribution function (DF): $f(x,v)$. If make the assumption that the system is in a \textit{steady state} (i.e. $\frac{\partial}{\partial t} = 0$: the system is not collapsing over time) and the underlying gravitational potential ($\Phi$) that the tracers are subject to is smooth, then the DF \textit{must} satisfy the steady-state collisionless Boltzmann equation:
+The narrative in this section follows that of \citet{cappellari2008}, with additional explanation and context where necessary. The phase space distribution of positions ($x_{i}$) and velocities ($v_{i}$) for a set $i$ of tracers (such as stars, IFU spaxels or potentially satellite galaxies) within a massive system (such as a stellar cluster, galaxy or dark matter halo) can be characterised by the distribution function (DF): $f(x,v)$. If make the assumption that the system is in a \textit{steady state} (i.e. $\frac{\partial}{\partial t} = 0$: the system is not collapsing over time - we will return to this assumption later!) and the underlying gravitational potential ($\Phi$) that the tracers are subject to is smooth, then the DF \textit{must} satisfy the steady-state collisionless Boltzmann equation:
 \begin{equation}
 \sum^{3}_{i=1}\left(v_{i}\frac{\partial f}{\partial x_i} - \frac{\partial \Phi}{\partial x_{i}}\frac{\partial f}{\partial v_{i}} \right) = 0.
 \end{equation}
@@ -127,9 +127,9 @@ v_{R}\frac{\partial f}{\partial R} + v_{z}\frac{\partial f}{\partial z} + \left(
 \end{equation}
 
 To convert this into something solvable, this equation is multiplied by $v_R$ and $v_z$ respectively and integrated over all velocities to obtain the two Jeans equations \citep[][; BT equation 4-29a,c]{jeans1922}
-\begin{eqnarray}
+\begin{eqnarray} \label{basic_jeans1}
 \frac{\nu \overline{v_{R}^{2}} - \nu \overline{v_{\phi}^{2}}}{R} + \frac{\partial (\nu \overline{v^{2}_{R}})}{\partial R} + \frac{\nu \overline{v_{R} v_{z}}}{\partial z} = - \nu \frac{\partial \Phi}{\partial R} \\
-\frac{\nu \overline{v_{R}v_{z}}}{R} + \frac{\partial (\nu \overline{v^{2}_{z}})}{\partial z} + \frac{\nu \overline{v_{R} v_{z}}}{\partial R} = - \nu \frac{\partial \Phi}{\partial z}
+\frac{\nu \overline{v_{R}v_{z}}}{R} + \frac{\partial (\nu \overline{v^{2}_{z}})}{\partial z} + \frac{\nu \overline{v_{R} v_{z}}}{\partial R} = - \nu \frac{\partial \Phi}{\partial z} \label{basic_jeans2}
 \end{eqnarray}
 where $\nu$ is the observed luminosity density distribution for the system so that
 \begin{equation}
@@ -163,12 +163,14 @@ Implementing these assumptions (where $\beta_z = 1/b$) and using the boundary co
 \end{eqnarray}
 One final caveat regarding the implementation of the Jeans equations in this way, is that the solution satisfying these may not correspond to a physical (positive) DF. To assess the validity of the solutions for a given system model we can compare these predicted moments with the observed distributions for our tracers. However to do so we need to parametrise both the form of the potential $\Phi$ and the luminous surface density $\nu$.
 
-\red{add MGE discussion?}
-\red{add discrete section?}
-\subsection{Discrete dynamical models}
+\subsubsection{Steady state assumption for satellite dynamics}
+One key assumption throughout this introduction is that the system (dark matter halo) is in a \textit{steady state}. This assumes that the satellites (or subhaloes) used as tracers are virialised and the system is relaxed. Observations \citep[e.g.][]{mamon2005} and N-body simulations \citep[e.g.][]{mahajan2011}, however, have shown that virialised clusters (or groups) are surrounded by in-fall zones from which the subhaloes move into the system, as predicted in \citet{gunn1972}. Accreted satellites with significant radial motion \textit{break} the steady state assumption, and hence a method to account for this additional peculiar in-fall motion, and, the impact of the Hubble expansion must be included in our equations of motion.
+
+In the following, we present two possible methods of overcoming the difficulties of a non steady state. In \S\ref{sec:discrete_dynamical_models} we describe the implementation of \textit{discrete} dynamical modelling, where sub-populations of tracers (such as contaminants) can be treated differently when evaluating the best fitting model. In this instance, those with significant in-fall velocities on the outskirts can be removed from the model. Despite this, in Figure \ref{fig:beta_stack}, we showed that the difference in anisotropy between different environment is most distinct in the outskirts of the halo, away from the impact of self-gravity, so care must be taken not to remove the tracers which display the majority of this signal.
+
+One alternative is to relax the steady state assumption in our Jeans equations (equations \ref{basic_jeans1} \& \ref{basic_jeans2}). By generalising the standard Jeans formalism, we can include additional terms such as the peculiar in-fall motions of galaxies, and cosmological expansion. In \S\ref{sec:jeans_rederivation} we re-derive the Jeans equations to include these additional terms. Of particular relevance to this work is \citet{falco2013}, who introduce and implement a generalised set of Jeans equations, however, under the assumption of spherical symmetry. In this work, they include additional terms corresponding to the radial collapse (or in-fall) of galaxies, Hubble expansion, and contributions from background cosmology. They find that adapting the Jeans equations, enables recovery of key parameters (such as the radial velocity dispersion) to 2 virial radii and above. 
 
 \subsection{Generalised Jeans equations in cylindrical coordinates} \label{sec:jeans_rederivation}
-\red{Where to put this?}
 In standard cylindrical coordinates (R,z,$\phi$) under the assumption of axial symmetry (so that; $\partial \Phi / \partial \phi = \partial f / \partial \phi = 0$) we find the collisionless Boltzmann equation to be (cf. BT equation [4-17]): 
 \begin{equation} \label{eq:CBE}
 \frac{\partial f}{\partial t} + v_R \frac{\partial f}{\partial R} + v_z \frac{\partial f}{\partial z} + \left[\frac{v_{\phi}^2}{R} - \frac{\partial \Phi}{\partial R}\right] \frac{\partial f}{\partial v_R} - \frac{v_R v_{\phi}}{R} \frac{\partial f}{\partial v_{\phi}} - \frac{\partial \Phi}{\partial z} \frac{\partial f}{\partial V_z} = 0.
@@ -184,7 +186,7 @@ where we use the following notation
 \nu &\equiv \int f d^3 v \\
 \nu \overline{v_k v_j} &\equiv \int v_k v_j f d^3 v .
 \end{align}
-Similarly we can derive the continuity equation in cylindrical coordinates by integrating \ref{eq:CBE} over all velocities (cf. BT [4-28] 
+Similarly we can derive the continuity equation in cylindrical coordinates by integrating \ref{eq:CBE} over all velocities (cf. BT [4-28])
 \begin{equation} \label{eq:contin}
 \frac{\partial \nu}{\partial t} + \frac{1}{R}\frac{\partial (R \nu \overline{v_R})}{\partial R} + \frac{\partial (\nu \overline{v_z})}{\partial z} = 0.
 \end{equation}
@@ -210,8 +212,112 @@ Re-introducing these terms and using a similar method for the $v_z$ moment, the 
 \begin{multline}
 \nu \left[\overline{v_z}\frac{\partial \overline{v_z}}{\partial z} + \frac{\partial \overline{v_z}}{\partial t} \right] - \overline{v_z} \frac{\partial (\nu \overline{v_R})}{\partial R} + \frac{\partial (\nu \sigma_z^2)}{\partial z} + \frac{\nu \sigma_{Rz}^2}{R} + \nu \frac{\partial \Phi}{\partial z} = 0 
 \end{multline}
-where we have used that $\overline{v_z v_R} = \sigma_{Rz}^2 + \overline{v_R} \ \overline{v_z}$. These reduce to the usual form of the Jeans equations under the steady state assumption but due to this inclusion of non-equilibrium, we find three additional terms in both relating to the mean radial motion of galaxies in both the $z$ and $R$ directions.
+where we have used that $\overline{v_z v_R} = \sigma_{Rz}^2 + \overline{v_R} \ \overline{v_z}$. These reduce to the usual form of the Jeans equations under the steady state assumption but due to this inclusion of non-equilibrium, we find three additional terms in both relating to the mean radial motion of galaxies in both the $z$ and $R$ directions. \red{need to take further and introduce what the additional terms could correspond to - i.e. in-fall, hubble expansion etc.}
 
 \subsection{Discrete dynamical models} \label{sec:discrete_dynamical_models}
+\red{need to make segway about how to adapt Jeans equations to produce first order velocity moments (as in Watkins et al. 2013.}
+We now introduce the likelihood function which can be evaluated for a set of tracers (galaxies) in a system (stacked dark matter halo) for our choice of generalised or steady state Jeans equations. As an introduction, we follow the formalism of discrete dynamical modelling introduced in \citet{watkins2013} in the instance where full 3D motions and velocities are know for the tracer population. We then adapt the likelihood function and solutions since in observations we would not be equipped with 3D velocities for galaxies. This issue can be abridged by considering additional information about the tracers (i.e. tracers with different morphological or colour properties may have dynamical properties and hence can be separated and modelled differently), and adapting the likelihood function \citep[e.g.][]{zhu16sculptor}.
+
+\red{need to include description of functional form for the gravitational potential (from paper draft?), first order velocity moment computation, and MGE stuff.}
+
+\subsubsection{An ideal world}
+As an introduction, we first consider the form of the likelihood function for a single population of tracers where we know the complete dynamical characteristics for (i.e. we know their 3D positions and velocities). This discussion follows \cite{watkins13} with application to the globular cluster $\omega$ Centauri, however we try and keep the terminology here as general as possible. If we have a data set of N tracers such that the $i$th tracer has coordinates $x_{i}'= (x'_{i},y'_{i})$ and velocities $v_{x',i} \pm \sigma_{v_{x',i}}, v_{y',i} \pm \sigma_{v_{y',i}}$ and $v_{z',i} \pm \sigma_{v_{z',i}}$, where $x'$ is the projected major axis direction, $y'$ is the projected minor axis direction and $z'$ is the line of sight direction. We can then describe the velocity vector \textbf{$v_{i}$} and the error matrix \mathbf{$S_{i}$} such that,
+\begin{equation}
+\boldsymbol{v}_{i} = (v_{x',i},v_{y',i},v_{z',i}) \quad , \quad \boldsymbol{S}_{i} = \begin{bmatrix} \sigma_{v_{x',i}} & 0 & 0 \\ 0 & \sigma_{v_{x',i}} & 0 \\ 0 & 0 & \sigma_{v_{z',i}} \end{bmatrix}
+\end{equation}
+assuming uncorrelated errors.
+
+Suppose we have a set of evaluated Jeans equations (\textit{models}; described by a set of parameters $\boldsymbol{\Theta}^{sys}_{j}$) and we want to find which one provides the best prediction to our data set. For a given model with a particular parameter set $j$, then the likelihood of observing a tracer $i$ is given, 
+\begin{equation}
+\mathcal{L}^{sys}_{ij} = p (\boldsymbol{v}_{i}|\boldsymbol{x}'_{i},\boldsymbol{S}_{i},\boldsymbol{\Theta}^{sys}_{j})
+\end{equation}
+An important point to note is that position information is taken to be prior information and therefore the probability distribution for each tracer is velocities only. The total likelihood $\mathcal{L}^{sys}_{j}$ of a given model is then the product of the model likelihoods for all tracer velocities given their positions:
+\begin{equation}
+\mathcal{L}^{sys}_{i} = \prod^{N}_{i=1} \mathcal{L}^{sys}_{ij}
+\end{equation}
+For chain convergence in finding the best model through sampling, it is easier to work with log-likelihoods $\ell_j = ln\mathcal{L}_{j}$. The best model is one that therefore maximises $\ell_j$. 
+
+We now need a way of dealing with tracers that aren't actually part of system (i.e. galaxies in the foreground or background and hence not associated with the stack/halo). To do so we complicate our likelihood function with an additional component such that, 
+\begin{equation}
+\mathcal{L}_{ij} = \eta_{i}\mathcal{L}^{sys}_{ij} + (1-\eta_i)\mathcal{L}_{ij}^{bg}
+\end{equation}
+where $\mathcal{L}^{bg}_{ij}$ is the likelihood for the background model with parameters $\boldsymbol{\Theta}^{bg}_{j}$. Our entire parameter set $\boldsymbol{\Theta}_{j}$ therefore comprises of $\boldsymbol{\Theta}^{sys}_{j}$ and $\boldsymbol{\Theta}^{bg}_{j}$. $\eta_{i} = 1$ if the tracer is a member of the system and $\eta_{i} = 0$ if the tracer is part of the background. Since we don't know which tracers are contaminants (unless we want to return to cutting our data), this would add N extra parameters to $\boldsymbol{\Theta}_{j}$ and hence make modelling very difficult. Instead it makes sense to introduce a mixture model that combines the system and background likelihoods:
+\begin{equation}
+\mathcal{L}_{ij} = m_{i}(\boldsymbol{x}'_{i})\mathcal{L}^{sys}_{ij} + [1 - m_{i}(\boldsymbol{x}'_{i})]\mathcal{L}^{bg}_{ij}
+\end{equation}
+where $m_{i}(\boldsymbol{x}'_{i}) = p(\eta_{i} = 1| \boldsymbol{x}'_{i})$ is the prior probability that the tracer is part of the system given its position. To find the posterior membership probability for each tracer in a given model we can write,
+\begin{equation}
+m_{i} = p(\eta_i = 1) = \frac{m_{i}\mathcal{L}_{ij}^{sys}}{m_{i}\mathcal{L}_{ij}^{sys} + (1 - m_i)\mathcal{L}^{bg}_{ij}}
+\end{equation}
+
+A necessary component of sampling to find the best fitting model parameters is the construction of priors. Following the discussion of \citet{watkins2013}, lets consider membership priors $m_i$ which would be entirely dependent on the galaxy's position (i.e. $m_{i}(\boldsymbol{x}'_{i})$). However, if we know expected properties about the typical galaxies in the system we could also include things such as colours and SFR. 
+
+\red{talk about MGEs?}
+Assuming we have a functional form for the projected luminous surface density of our system, and our unwavering assumption of our system being elliptical in shape (due to the assumption of axial symmetry), it is then natural that we would expect a given tracer near the projected centre to have a higher membership probability than if it were on the outskirts. Assuming that the luminous surface density $I$, is proportional to number surface density $dN_{sys}$ we can write our prior probability of system membership as:
+\begin{equation}
+m_{i}(\boldsymbol{x}'_{i}) = \frac{dN_{sys}(\boldsymbol{x}'_{i})}{dN_{sys}(\boldsymbol{x}'_{i}) + dN_{bg}(\boldsymbol{x}'_{i})}
+\end{equation}
+where d$N_{bg}$ is the background surface density. Unfortunately we don't know $dN_{bg}(\boldsymbol{x}'_{i})$, however we can make a reasonable guess\footnote{This is a reasonable guess for star cluster scales. We may have to be careful when thinking about this on cosmic web scales. Do we have reason to believe that foreground/background galaxies should be completely uniform?} that it be assumed to be constant across the system and is equal to a fraction $\epsilon$ of the central system, number surface density $dN_{0} = dN_{sys}(0,0)$. The prior on system membership then becomes
+\begin{equation}
+m_{i}(\boldsymbol{x}'_{i}) = \frac{dN_{sys}(\boldsymbol{x}'_{i})}{dN_{sys}(\boldsymbol{x}'_{i}) + \epsilon dN_{0}}
+\end{equation}
+where $\epsilon$ will be included as a free parameter in $\boldsymbol{\Theta}_{j}$.
+
+So to summarise the key components of constructing a likelihood function for a set of discrete tracers: 
+\begin{itemize}
+    \item We are equipped with positions and velocities for our tracers.
+    \item We have a likelihood function for a given model with parameters $\boldsymbol{\Theta}_{j}$ which can deal with tracers not being part of the system.
+    \item We can evaluate the likelihood function if we consider our tracer positions as prior information and then estimate the velocity moments from the Jeans equations and compare to the observed values.
+\end{itemize}
+\textit{But aren't Jeans equations, equations not models?} Well, yes. To proceed we assume that the velocity distribution predicted by the model is a Gaussian (trivariate if 3D) \todo{Is a gaussian a sensible assumption? Lange+18} with mean velocity $\boldsymbol{\mu}_{i}^{sys}$ and covariance $\boldsymbol{\mathcal{C}}_{ij}^{sys}$ at $\boldsymbol{x}_i'$. \textit{In doing this, our results are no longer independent of the form of the DF}. The likelihood can then be written, 
+\begin{align*}
+\mathcal{L}_{ij}^{sys} &= p(\boldsymbol{v}_i|\boldsymbol{x}_{i}',\boldsymbol{S}_i,\eta_i=1,\boldsymbol{\mu}_{i}^{sys},\boldsymbol{\mathcal{C}}_{ij}^{sys}) \\ &= \frac{\exp{\left[-\frac{1}{2}(\boldsymbol{v}_i - \boldsymbol{\mu}_{ij}^{sys})^{T}(\boldsymbol{C_{ij}^{sys}} + \boldsymbol{S}_i)^{-1}(\boldsymbol{v}_i - \boldsymbol{\mu}_{ij}^{sys}) \right]}}{\sqrt{(2\pi)^{n}|(\boldsymbol{C}_{ij}^{sys}+\boldsymbol{S}_i)|}}
+\end{align*}
+where n is the rank of $\boldsymbol{S}_i$, for objects with 3D velocities $n=3$.\todo{Derivation of first-order velocity moments?} Remember that we assumed our observed velocity errors are uncorrelated (and Gaussian!). We also assume that the background model predicts a multivariate Gaussian velocity distribution. Our Jeans equations will always generate 3D velocity predictions but this doesn't necessitate that we can only use tracers with 3D velocities. 
+
+\subsubsection{The likelihood function with 1D velocities}
+For most situations we will not be blessed with 3D velocities for our tracer population. In particular, if we use galaxies as tracers we will only be equipped with line-of-sight velocities. Before despairing, we recall that we can generalise our likelihood function to not only include spatial information but also population properties such as metallicities/colours/sSFR (referred to as `chemo' or chemical properties henceforth for the sake of consistent nomenclature between star clusters and galaxies). 
+
+In this case, we can consider different tracer populations following the same gravitational potential, but each with its own chemical, spatial and dynamical properties. In principal, this means we can generate models (Gaussians for velocity moments) from the Jeans equations for as many as different populations as we like. This only really worthwhile doing if your populations are \textit{distinct}; i.e. they can actually be split by a `chemo' property and show distinctly different dynamics and spatial distribution. 
+
+For simplicity lets consider $k=2$ populations, consisting of a low SFR and high SFR population of satellite galaxy tracers (for example). This discussion follows \citet{zhu16sculptor}, on which we base on our modelling. For each population k, we can adopt a Gaussian distribution in SFR $(SFR^{k}_{0},\sigma^{k}_{SFR})$. Given a tracer $i$ with measured SFR $SFR_i \pm \delta SFR_i$, the \textit{chemical} probability for population k is then,
+\begin{equation}
+P_{chm,i}^{k} = \frac{1}{\sqrt{2\pi [(\sigma^{k}_{Z})^2+ \delta SFR_{i}^2]}}\exp{\left[-\frac{1}{2}\frac{(SFR_{i}-SFR^k_0)^2}{(\sigma^k_SFR)^2+\delta SFR_i^2}\right]}. 
+\end{equation}
+
+We can also define each population to have its own spatial distribution through the observed surface number density $\Sigma^k(x',y')$. Given a satellite tracer $i$ at position $(x_i',y_i')$, the spatial probability for population k is
+\begin{equation}
+P^{k}_{spa,i} = \frac{\Sigma^k(x'_i,y'_i)}{\Sigma_{sys}(x_i',y_i')+\Sigma_{bg}}
+\end{equation}
+where $\Sigma_{sys}$ is the surface number density for all combined populations belonging to the system, excluding the background surface number density $\Sigma_{bg}$ (which again we can assume to be a constant fraction $\epsilon$ of the central object surface number density). 
+
+Decomposing $\Sigma_{sys}$ into a set of $\Sigma_{k}$ is far from trivial. \red{introduce MGEs somewhere??} Remember our MGEs from \S\ref{MGE}? Lets consider that the number surface density for the system has been expanded into a set of M Gaussians. We can then consider that each Gaussian $j$ contributes a fraction $h^{k}_{j}$ to the surface number density of a given tracer population so that
+\begin{equation}
+\Sigma^{k}(x',y') = \sum^{M}_{j=1} \frac{L_j}{2\pi \sigma^2_j} \exp{\left[-\frac{x'^2 + y'^2 /q'^2_j}{2\sigma^2_j}\right]}
+\end{equation}
+where $L_j,\sigma_j,q'_j$ are the total luminosity, dispersion and projected flattening of each Gaussian $j$. If we impose that $\sum^k h^k_j = 1$, then for two populations; low and high SFR we can write if $h^{high SFR} = h_j$ then $h^{low SFR} = 1 - h_j$ for each Gaussian. We can constrain the fraction $h_j$ both spatially and dynamically since the velocity distribution is dictated by both the gravitational potential and the surface number density.
+
+Finally we can define the dynamical probability in a similiar manner as we did where we had full 3D velocity information. For a satellite tracer $i$ with a line-of-sight velocity $v_{z',i} \pm \delta v_{z',i}$, the dynamical probability for a given population $k$, is a Gaussian distribution centred on the Jeans equation prediction $\mu^k_i$ with velocity dispersion $\sigma^k_i$ such that
+\begin{equation}
+P^k_{dyn,i} = \frac{1}{\sqrt{(\sigma^k_i)^2+ (\delta v_{z',i})^2}} \exp{\left[-\frac{1}{2}\frac{(v_{z',i}-\mu^k_i)^2}{(\sigma^k_i)^2 + (\delta v_{z',i})^2}\right]}.
+\end{equation}
+\subsubsection{Including contaminants again}
+If we know anything about our contaminant population, we can include it in the probability model for the background. As an example we can adopt a Gaussian distribution $(SFR_0^{bg},\sigma_SFR^{bg})$ for SFR. As before, we can assume the background surface number density to be uniform across the system, characterised by $\epsilon$. Finally, since we are including velocity in membership probability we can assume the contaminant's velocity to be systematic with respect to the system distributed as a Gaussian $(\mu_0^{bg}=-V_{sys},\sigma_0^{bg})$. 
+\subsubsection{Total probability}
+Combining all of this, the probability for a tracer $i$ belonging to a given population k can be written as
+\begin{equation}
+P_i^{k} = P_{spa,i}^k P_{chm,i}^k P_{dyn,i}^k 
+\end{equation}
+where $k$ in this case refers to our system populations and background. The relative probability for each population can also be described 
+\begin{equation}
+P'^k_i = P^k_i / \sum^k P^k_i
+\end{equation}
+which allows us to identify a tracer to a given population or the background.
+
+To evaluate a set of models defined by parameters $\boldsymbol{\Theta}$, we can find the total likelihood for a tracer $i$ found by the sum of these probabilities such that
+\begin{equation}
+\mathcal{L}_i = \sum_{k \neq bg} P^{k}_{spa,i} P^{k}_{chm,i} P^{k}_{dyn,i} + \left(1 - \sum_{k \neq bg} P^{k}_{spa,i} \right) P^{bg}_{chm,i} P^{bg}_{dyn,i}.
+\end{equation}
+We then calculate the total likelihood $\mathcal{L} = \prod^N_{i=1} \mathcal{L}_i$ of all N tracers. This total likelihood $\mathcal{L}$ or log-likelihood $ln \mathcal{L}$ are therefore the quantities we would like to maximise.
 
 \section{Summary and Conclusions} \label{sec:dyn_mod_conclusions}
