@@ -327,7 +327,7 @@ In order to estimate the typical noise associated with a MaNGA observation, we c
 
 In order to simulate the effects of the point spread function (PSF), we then convolve our binned particle data with a Gaussian kernel. MaNGA observations typically have a $g$-band PSF which can be fit with a Gaussian of $\sim 2-3''$ full width half maximum (FWHM). We take all our mock observations to have a PSF modelled by a Gaussian with a 2$''$ FWHM. The spatial scale of the simulation is effectively set by the gravitational softening length of both the DM and stellar particles at 0.5h$^{-1}$ kpc = 0.74 kpc. This is approximately a factor of two (four) lower than the spatial sampling (PSF) of a typical MaNGA observation. The typical spatial resolution of star forming gas cells in TNG100 is of order $\sim$200pc and therefore suitable for our mock observations. We direct the reader to Figure 1 in \citet{pillepich2019} for further details (scale by a factor of $16^{1/3}$ for TNG100). \red{Do you direct readers elsewhere for a thesis?}
 
-We fit position angles to MaNGA observations that have been Voronoi binned so that bins contain a minimum S/N $\sim 10$. To maintain consistency and avoid spurious individual particles biasing measurements, we also Voronoi bin our mock observations so that a minimum of 5 particles is contained within a given bin, again using the routine of \citet{cappellari2003}. Figure \ref{fig:example_obs} shows example stellar (and gas) velocity and dispersion fields along with normalised $r$-band flux, after our processing.
+We fit position angles to MaNGA observations that have been Voronoi binned so that bins contain a minimum S/N $\sim 10$. To maintain consistency and avoid spurious individual particles biasing measurements, we also Voronoi bin our mock observations so that a minimum of 5 particles is contained within a given bin, again using the routine of \citet{cappellari2003}. Figure \ref{fig:example_obs} shows example stellar (and gas) velocity and dispersion fields along with normalised $r$-band flux, after our processing. While this is sufficient for the purpose of this work (i.e. fitting kinematic positions to bulk rotation), we recommend the \texttt{SimSpin} package \citep{harborne2019, harborne2020}.
 
 \begin{figure*}
 	\includegraphics[width=\linewidth]{misalignment_TNG/example_kinematics.pdf}
@@ -399,7 +399,7 @@ A key assumption of this work is the ability for the projected $\Delta$PA to be 
 
 \begin{figure}
     \centering
-	\includegraphics[width=0.9\linewidth]{misalignment_TNG/PA_alpha_resid_hist.pdf}
+	\includegraphics[width=0.7\linewidth]{misalignment_TNG/PA_alpha_resid_hist.pdf}
     \caption{Probability density distribution of the difference between various measures of the star-gas rotational angle offset. The difference between the 3D angular momentum vectors and projection in 2D is shown (black), $\Delta$PA and 2D (yellow) and $\Delta$PA and 3D (red).}
     \label{fig:PA_residual}
 \end{figure}
