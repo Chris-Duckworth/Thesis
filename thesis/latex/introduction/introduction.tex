@@ -1,8 +1,10 @@
+\colorlet{chaptergrey}{red!90!yellow!30!}
+
 % \epigraph{Father Dougal: Didn't you tell me once that Father Jack had a trial for Liverpool?
 % \\ Father Ted: No... no, he was on trial, in Liverpool.}
 \chapter{Introduction}
 \vspace{-5in}
-\includegraphics[height=2.0in]{thesis/latex/st_a_logo_.png}
+\includegraphics[height=1.33in]{thesis/latex/headers/pink_ifu.pdf}
 \vspace{3in}
 
 \epigraph{Galaxies are funny old things. Broadly characterised into being red or blue, the basics of galaxy properties are relatively simple. The deeper we dig, however, the more nuance and subtleties we unveil. On smaller scales galaxies act as astronomic laboratories shedding light on the evolution of stars and gas, while on cosmological scales these baryonic building blocks trace the large scale structure of the Universe, revealing the nature of gravity.}
@@ -84,7 +86,7 @@ There is no \textit{correct} choice in how we chose to mathematically characteri
 
 The first of which directly relies on the cosmic web being a product of the influence of large-scale tidal forces, by computing the \textit{tidal tensor} which acts as a method for quantifying the directionality of collapse and hence the anisotropy of the environment. In observations, the idea is to estimate the tidal tensor from a smoothed distribution of galaxy density, and at every given sampling point, compute the eigenvalues in each cartesian direction. Regions are then classified based the value of each eigenvalue with respect to a given threshold so that; void if all eigenvalues below threshold (no collapse), sheet (wall) if one eigenvalue above the threshold, a filament if two eigenvalues are above the threshold, and a knot (node) if all eigenvalues are above the threshold (collapse in all directions) \citep[e.g.][]{eardley2015}. The power in this method is the ability to characterise all regions of space, however, is faced with the difficulty that a specific smoothing scale must be chosen.
 
-\red{add GAMA field from Eardley's and Kat's papers & direct comparison. plot from libeskind figure 4 - difference between things in similar density.}
+\red{add GAMA field from Eardley's and Kat's papers \& direct comparison. plot from libeskind figure 4 - difference between things in similar density.}
 
 A methodology that is \textit{somewhat} agnostic to scale (or smoothing length) are geometric ridge extractors. Similar to tracing out the interconnection between peaks, valleys and everything in-between of a mountain range, ridge extractors classify the cosmic web based on the gradient of the density field. A popular choice at the time of writing (and the choice throughout this thesis) is the Discrete Persistent Structures Extractor \citep[DisPerSE][]{sousbie2011a, sousbie2011b}. The geometric three-dimensional ridge extractor can be applied directly to discrete data (i.e. point like distributions, meaning that it is well suited to astrophysical applications such as galaxy positions in large scale redshift surveys \citep[e.g.][]{malavasi2017, kraljic2018}.
 
@@ -140,7 +142,7 @@ In parallel with the advances in spectrographs leading to large scale IFS survey
 
 In recent years, the first generation of cosmological \textit{hydrodynamical} simulations have helped understand the interplay between smaller scale baryonic processes and the anisotropy of the cosmic web, leading to the galactic diversity we observe. These `full-physics' simulations comprise of high-resolution dark matter N-body codes on cosmological volumes (100 Mpc and above) coupled with the hydrodynamics of gas and models for star formation and multiple feedback prescriptions. A non-exhaustive list of simulated Universes include \texttt{Horizon-AGN} \citep{dubois2014}, \texttt{EAGLE} \citep{schaye2015}, \texttt{Illustris} \citep{vogelsberger2014a, vogelsberger2014b, genel2014, sijacki2015}, \texttt{IllustrisTNG} \citep{marinacci18, naiman18, nelson18, pillepich18a, springel18}, and \texttt{SIMBA} \citep{dave2019}. \red{add more basics about simulations and general successes/failures.}
 
-\subsection{Mocking the observers}
+\subsection{Mocking the observables}
 Ensuring that we are comparing apples to apples is a recurring theme when attempting to recover observations with simulations. De-convolving dissimilarity in how parameters are computed and physical differences in simulations is crucial in understanding how well observations are recovered. In the context of angular momentum and mass build up, recent work by \citet{sande2019} compare observations (SAMI, ATLAS\textsuperscript{3D}, CALIFA and MASSIVE surveys) to various predictions of hydrodynamical simulations (e.g. \texttt{EAGLE}; \citet{schaye2015}, \texttt{Horizon-AGN}; \citet{dubois2014}, \texttt{HYDRANGEA}; \citet{bahe2017}) at $z \sim 0$. Despite the vast improvement of cosmological simulations in recent years which broadly reproduce many galaxy relations, there are distinct differences in different stellar mass ranges for each simulation in each of physical size, shape and rotation with respect to observations.
 
 Recent efforts to compare kinematics in simulations to observations include the \texttt{SimSpin} package \citep{harborne2019, harborne2020} who create a flexible framework to construct mock IFS observations from particle data in a range of simulations. With an emphasis on angular momentum, they provide a consistent methodology to compute observational properties such as $\lambda_R$ and $V/\sigma$ which is of particular relevance to the focus of this thesis.
